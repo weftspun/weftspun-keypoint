@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="weftspun" fetch="https://github.com/weftspun" />
+  <remote name="sinew-mocap" fetch="https://github.com/sinew-mocap" />
+  <remote name="v-sekai-fabric" fetch="https://github.com/v-sekai-fabric" />
+
+  <default sync-j="16" />
+
+  <!-- Corpus, and keypoint detection.
+
+       The corpus this renders and the model it trains: 104-keypoint wholebody detection
+       from ANNY renders, with pose-consensus refereeing what a pose actually was.
+       
+       entities-godot appears twice because CineForm carries the depth the renderer
+       writes, and the reader has to be reviewed against a main that moved under it.
+       
+       The sinew projects are here rather than beside the mesh work because motion
+       capture produces keypoints, which is the same label this corpus supervises.
+  -->
+
+  <project name="weftspun-studio" path="1-transport/weftspun-studio" remote="weftspun" revision="main" />
+  <project name="easy-diffusion-mcp" path="1-transport/easy-diffusion-mcp" remote="weftspun" revision="main" />
+  <project name="rf-detr-mcp" path="1-transport/rf-detr-mcp" remote="weftspun" revision="main" />
+  <project name="runpod-chat-tui" path="1-transport/runpod-chat-tui" remote="weftspun" revision="main" />
+  <project name="ex_mcp" path="1-transport/ex_mcp" remote="weftspun" revision="main" />
+  <project name="driver" path="1-transport/sinew-driver" remote="sinew-mocap" revision="main" />
+  <project name="vr-bridge" path="1-transport/sinew-vr-bridge" remote="sinew-mocap" revision="main" />
+  <project name="viewer" path="1-transport/sinew-viewer" remote="sinew-mocap" revision="main" />
+  <project name="osc-tester" path="1-transport/sinew-osc-tester" remote="sinew-mocap" revision="main" />
+  <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
+  <project name="swing-twist-kusudama" path="2-contract/swing-twist-kusudama" remote="v-sekai-fabric" revision="main" />
+  <project name="interactor-kimodo-text-to-motion" path="3-interactor/kimodo-text-to-motion" remote="weftspun" revision="main" />
+  <project name="interactor-skintokens-auto-rig" path="3-interactor/skintokens-auto-rig" remote="weftspun" revision="main" />
+  <project name="interactor-seethrough-torch" path="3-interactor/seethrough-torch" remote="weftspun" revision="main" />
+  <project name="entities-godot" path="3-interactor/entities-godot-main" remote="v-sekai-fabric" revision="main" />
+  <project name="entities-godot" path="3-interactor/entities-godot-cineform" remote="v-sekai-fabric" revision="cineform-movie-writer" />
+  <project name="cyclegan-style-transfer" path="3-interactor/cyclegan-style-transfer" remote="weftspun" revision="main" />
+  <project name="interactor-seethrough-tinygrad" path="3-interactor/seethrough-tinygrad" remote="weftspun" revision="main" />
+  <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
+  <project name="interactor-pose-consensus" path="3-interactor/pose-consensus" remote="weftspun" revision="main" />
+  <project name="solve" path="3-interactor/sinew-solve" remote="sinew-mocap" revision="main" />
+  <project name="mount-drift" path="3-interactor/sinew-mount-drift" remote="sinew-mocap" revision="main" />
+  <project name="interactor-physics" path="3-interactor/physics" remote="v-sekai-fabric" revision="main" />
+  <project name="interactor-motion" path="3-interactor/motion" remote="v-sekai-fabric" revision="main" />
+  <project name="mujoco-riscv64" path="3-interactor/mujoco-riscv64" remote="v-sekai-fabric" revision="main" />
+  <project name="godot-soma-twist" path="4-entities/godot-soma-twist" remote="weftspun" revision="main" />
+  <project name="anny-pose-retarget-work" path="4-entities/anny-pose-retarget-work" remote="weftspun" revision="main" />
+  <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
+  <project name="elixir-holographic-reduced-representation" path="4-entities/elixir-holographic-reduced-representation" remote="weftspun" revision="main" />
+  <project name="entities-humanoid-rom" path="4-entities/humanoid-rom" remote="v-sekai-fabric" revision="main" />
+  <project name="logbook" path=".logbook" remote="weftspun" revision="main">
+    <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
+    <linkfile src="CLAUDE.md" dest="AGENTS.md" />
+  </project>
+  <project name="request-for-discussion" path=".request_for_discussion" remote="weftspun" revision="main" />
+  <project name="tropes-removal-model" path=".tropes_removal_model" remote="weftspun" revision="main" />
+  <project name=".github" path=".github" remote="weftspun" revision="main" />
+  <project name="dataflow-coco-gemx" path="6-datasource/dataflow-coco-gemx" remote="weftspun" revision="main" />
+  <project name="versitygw-local" path="6-datasource/versitygw-local" remote="weftspun" revision="main" />
+  <project name="rf-detr-detection-data" path="6-datasource/rf-detr-detection-data" remote="weftspun" revision="main" />
+  <project name="rf-detr-keypoint-data" path="6-datasource/rf-detr-keypoint-data" remote="weftspun" revision="main" />
+  <project name="rf-detr-segmentation-data" path="6-datasource/rf-detr-segmentation-data" remote="weftspun" revision="main" />
+  <project name="kenney-stage" path="6-datasource/kenney-stage" remote="weftspun" revision="main" />
+  <project name="quaternius-stage" path="6-datasource/quaternius-stage" remote="weftspun" revision="main" />
+  <project name="thebasemesh-stage" path="6-datasource/thebasemesh-stage" remote="weftspun" revision="main" />
+  <project name="easy-diffusion-traces" path="6-datasource/easy-diffusion-traces" remote="weftspun" revision="main" />
+  <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
+  <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
+  <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
+  <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
+  <project name="packaging" path="7-service/sinew-packaging" remote="sinew-mocap" revision="main" />
+  <project name="homebrew-sinew" path="7-service/sinew-homebrew" remote="sinew-mocap" revision="main" />
+  <project name="scoop-bucket" path="7-service/sinew-scoop-bucket" remote="sinew-mocap" revision="main" />
+  <project name="blender-extensions" path="7-service/sinew-blender-extensions" remote="sinew-mocap" revision="main" />
+
+</manifest>
