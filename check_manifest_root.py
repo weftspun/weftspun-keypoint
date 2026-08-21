@@ -357,7 +357,13 @@ def main():
         declared, problems = check_manifest_only(manifest)
         print()
         if problems:
-            print("Replace each <copyfile> with <linkfile>: a copy drifts, a link cannot.")
+            # Only the copyfile hint when the problem is copyfiles. A parse error printing
+            # "replace each <copyfile>" sends the reader hunting for a construct that is
+            # not there; it happened, on a manifest whose only fault was a double hyphen
+            # inside an XML comment.
+            if declared is not None:
+                print("Replace each <copyfile> with <linkfile>: a copy drifts, "
+                      "a link cannot.")
             return 1
         # Said out loud, because the whole point of this mode is that it checks less. A run
         # that reported only "ok" would read as a full check to anybody skimming the log.
