@@ -64,9 +64,23 @@
   <project name="logbook" path=".logbook" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
-    <linkfile src="KEYPOINTS.md" dest="KEYPOINTS.md" />
   </project>
-  <project name="request-for-discussion" path=".request_for_discussion" remote="weftspun" revision="main" />
+  <!-- The root opens on the argument rather than on a note about the manifest's
+       name. RFD 107a is what this goal is for: the wholebody gap, and the
+       renderer that closes it. README.md is its summary and DETAILS.md its
+       detail, so both come across and keep the names they already have.
+
+       linkfile, never copyfile, and check_manifest_root.py enforces that rather
+       than trusting it. A copy is an ordinary writable file between syncs, so an
+       edit at the root lands somewhere real, survives, and is then overwritten
+       with no report, and nothing says which side was the newer one. A
+       link has no in-between state to lose. The cost is that the root resolves
+       into .request_for_discussion/107a-the-wholebody-gap/ and the reader sees
+       the path they landed in. Edit 107a; the root is another name for it. -->
+  <project name="request-for-discussion" path=".request_for_discussion" remote="weftspun" revision="main">
+    <linkfile src="107a-the-wholebody-gap/README.md" dest="README.md" />
+    <linkfile src="107a-the-wholebody-gap/DETAILS.md" dest="DETAILS.md" />
+  </project>
   <project name="tropes-removal-model" path=".tropes_removal_model" remote="weftspun" revision="main" />
   <project name=".github" path=".github" remote="weftspun" revision="main" />
   <project name="dataflow-coco-gemx" path="6-datasource/dataflow-coco-gemx" remote="weftspun" revision="main" />
