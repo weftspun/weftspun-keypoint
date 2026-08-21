@@ -4,6 +4,7 @@
   <remote name="weftspun" fetch="https://github.com/weftspun" />
   <remote name="sinew-mocap" fetch="https://github.com/sinew-mocap" />
   <remote name="v-sekai-fabric" fetch="https://github.com/v-sekai-fabric" />
+  <remote name="v-sekai" fetch="https://github.com/v-sekai" />
 
   <default sync-j="16" />
 
@@ -29,6 +30,17 @@
   <project name="viewer" path="1-transport/sinew-viewer" remote="sinew-mocap" revision="main" />
   <project name="osc-tester" path="1-transport/sinew-osc-tester" remote="sinew-mocap" revision="main" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
+  <!-- The manuals are on the contract side because that is what they are: the
+       numbering space, the states and the conventions every RFD in this workspace
+       is written against. They allocate out of one space with
+       weftspun/request-for-discussion, which is why the collision was possible at
+       all, and an unplaced project is exactly what let it go unnoticed.
+
+       They stay two repositories. v-sekai/manuals keeps dated MADR records and
+       numbers nothing; the fabric manuals keep numbered RFDs. Neither is merged
+       into the other. -->
+  <project name="multiplayer-fabric-manuals" path="2-contract/multiplayer-fabric-manuals" remote="v-sekai-fabric" revision="main" />
+  <project name="manuals" path="2-contract/manuals" remote="v-sekai" revision="main" />
   <project name="swing-twist-kusudama" path="2-contract/swing-twist-kusudama" remote="v-sekai-fabric" revision="main" />
   <project name="interactor-kimodo-text-to-motion" path="3-interactor/kimodo-text-to-motion" remote="weftspun" revision="main" />
   <project name="interactor-skintokens-auto-rig" path="3-interactor/skintokens-auto-rig" remote="weftspun" revision="main" />
