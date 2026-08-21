@@ -1,45 +1,76 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
-"""Gate: a pull request description in THIS repository is one heading, one paragraph,
-tables, lists and diagrams, and at most 144 words of prose.
+"""Gate: a pull request description in THIS repository has the shape people actually scan -
+either no headings or at least two, every heading with content under it, paragraphs short
+enough to be read rather than skipped, and any number of tables, lists and diagrams.
 
 WHY THIS EXISTS, AND WHY ONLY HERE. This repository holds one file. `default.xml` says what
 is in the keypoint goal and which side each project sits on, and a change to it is usually a
 line or two. The reasoning still has to travel, because `CLAUDE.md` sends it to the commit
 message and the pull request rather than into the file.
 
-Those two destinations are not the same size. A commit message is read by whoever runs
-`git log` and may run as long as it needs to. A pull request description is read once, in a
-review tab, by somebody deciding whether a two-line manifest change is right, and at that
-length prose stops being evidence and becomes a wall. The bound is tight enough to force the
-shape: state it, table the entries, draw it, stop.
-
-THIS BOUND IS LOCAL AND MUST NOT LEAK. Elsewhere the opposite rule holds. `weftspun/logbook`
-and `weftspun/request-for-discussion` want the measurement, the apparatus and the retraction
-written out, and 144 words would truncate all three. So this gate ships in the manifest
-repository and travels with nothing.
-
 THE SHAPE, AS BLOCK NODES AT THE TOP LEVEL OF THE AST:
 
-    heading                 at most one
-    paragraph               exactly one
-    table, list, fence      any number
-    anything else           rejected
+    heading         0, or 2 and up      never exactly one
+    heading         never two in a row  every heading introduces content
+    paragraph       1 and up            each at most 70 words
+    table           any number          any size, uncounted
+    list            any number          any size, uncounted
+    fenced diagram  any number          any size, uncounted
+    all prose       at most 144 words   headings and paragraphs together
+    anything else   rejected
+
+WHY THIS SHAPE AND NOT ANOTHER. It is not taste. Nielsen Norman's eye-tracking work names
+two patterns a reader falls into. The LAYER-CAKE pattern - fixating on headings, dropping
+into the body text between them only deliberately - happens on pages with visually distinct
+headings, and it is the efficient one: a reader scans straight to the section they need. The
+F-PATTERN happens instead when a page is "columns of text with little text that stands out",
+and NN/g calls it the low-efficiency case, where people "inadvertently miss meaningful
+information".
+
+That finding is about which shape gets read, not about which is prettier, which is why it is
+the one worth encoding. The measurement on pull requests specifically agrees: a study of
+description characteristics found header density and list density associated with faster
+reviewer response and shorter completion time, at a medium-to-large effect size, and named
+limited use of headers and lists as a cause of reduced readability.
+
+RETRACTED: NO HEADINGS AT ALL. An earlier version of this gate rejected every heading. The
+argument was that a lone heading restates the pull request title one line below the pull
+request title, and that argument is correct - it is why "exactly one" is still rejected
+below. What it did not survive is generalisation. A heading that is one of several is not
+restating the title, it is naming a section, and banning all of them to stop the degenerate
+case forced every description into the F-pattern shape NN/g measured as the one where
+readers miss things. The rule is kept where it holds and dropped where it does not.
+
+EVERY HEADING INTRODUCES CONTENT. Two headings in a row means the first named a section with
+nothing in it. NN/g's guidance is that a subheading is "descriptive of all topics in the
+section, and only topics in the section", which an empty section cannot satisfy. This is
+also the cheapest way a document fakes structure: stack the headings, and it looks scannable
+in outline and delivers nothing when scanned.
+
+PARAGRAPHS ARE BOUNDED INDIVIDUALLY, NOT ONLY IN TOTAL. A single 144-word block is exactly
+the "little text that stands out" case. Guidance for scannable prose puts a paragraph at two
+to four sentences; the gate bounds words instead, at 70, because words are countable exactly
+and sentences are not - splitting on full stops mistakes every abbreviation for a sentence
+end, which is the convenient proxy rather than the quantity. 70 words is roughly four
+sentences of ordinary technical prose, and the conversion is stated here rather than buried
+in a constant, so that a reader can disagree with it.
+
+STRUCTURE IS NEVER MEASURED FOR SIZE. A table is scanned by column, a list by item, a diagram
+by following an arrow, and a reader takes what they need and stops. An earlier version
+counted table cells against the prose budget, which priced the most scannable thing in a
+description as if it were the least, and in practice made the author shorten accurate prose
+to afford a table. What goes first under a word budget is the qualifying clause - the
+retraction, the baseline, the cost stated rather than hidden - which is what this workspace
+asks a description to carry.
 
 Read from the AST rather than from the source text, because a `#` inside a code span is not
 a heading and a hard-wrapped sentence is not two paragraphs. Paragraphs nested inside list
-items or table cells belong to their container and are not counted against the one; a list
-whose items may not contain prose is not a list anybody can use.
+items or table cells belong to their container: not counted against the paragraph rules, and
+their words not counted against the budget.
 
 Tables are GFM rather than core CommonMark, so the parser is CommonMark with the table rule
 enabled - the dialect GitHub actually renders the description in. A gate measuring a
 different grammar than the reader sees would be measuring the convenient proxy.
-
-WORDS ARE PROSE ONLY, AND DIAGRAMS ARE UNBOUNDED. Fenced blocks are excluded from the count
-entirely, however long they run. A diagram is not read at the speed prose is: a reader scans
-it or skips it, and charging it against the same budget would price the clearest thing in
-the description as if it were the most expensive. Everything outside a fence counts,
-including table cells and markup, which over-counts slightly against the author - the
-direction an upper bound should err.
 
 Run:  python check_pr_description.py --pr 3 [--repo owner/name]
       python check_pr_description.py --body-file draft.md
@@ -56,14 +87,13 @@ try:
 except ImportError:  # reported as a FAIL by main(), never as a clean run
     MarkdownIt = None
 
-MAX_WORDS = 144
-MAX_HEADINGS = 1
-EXACT_PARAGRAPHS = 1
-# Tables and lists carry the entries; a fence carries a diagram. Anything absent from this
-# set is rejected by omission, so a block type nobody anticipated fails loudly rather than
-# passing quietly.
-REPEATABLE = {"bullet_list_open", "ordered_list_open", "table_open", "fence", "code_block"}
-DIAGRAM = {"fence", "code_block"}
+MAX_PROSE_WORDS = 144      # headings and paragraphs together
+MAX_PARAGRAPH_WORDS = 70   # about four sentences; see the docstring for the conversion
+# Tables and lists carry the entries; a fence carries a diagram. Anything absent from these
+# two sets is rejected by omission, so a block type nobody anticipated fails loudly rather
+# than passing quietly.
+STRUCTURE = {"bullet_list_open", "ordered_list_open", "table_open", "fence", "code_block"}
+PROSE = {"heading_open", "paragraph_open"}
 
 
 def parser():
@@ -71,25 +101,28 @@ def parser():
 
 
 def top_level(body):
-    """Every top-level block token, with its source line span.
+    """Every top-level block token, as (type, source line span), in document order.
 
     Selected by `block` rather than by a name ending in `_open`, because not every block
     node is a container: `hr`, `fence`, `code_block` and `html_block` are standalone tokens,
     and a filter written around `_open` skips all four. The horizontal-rule control in
     self_test() is here because that is exactly the hole it found.
+
+    Document order is preserved and load-bearing: two headings in a row is a rule below, and
+    it cannot be seen from counts alone.
     """
     return [(t.type, t.map) for t in parser().parse(body)
             if t.level == 0 and t.block and not t.type.endswith("_close")]
 
 
-def prose_words(body, blocks):
-    """Words outside every fenced block. Diagrams are unbounded, so they do not count."""
+def words_in(body, span):
+    """Words on a block's source lines. Markup counts, which over-counts against the author.
+
+    That is the direction an upper bound should err: the gate never reports fewer words than
+    a reader would find.
+    """
     lines = body.splitlines()
-    inside = set()
-    for kind, span in blocks:
-        if kind in DIAGRAM and span:
-            inside.update(range(span[0], span[1]))
-    return sum(len(line.split()) for n, line in enumerate(lines) if n not in inside)
+    return sum(len(lines[n].split()) for n in range(*span)) if span else 0
 
 
 def check(body, verbose=True):
@@ -97,26 +130,34 @@ def check(body, verbose=True):
     blocks = top_level(body)
     kinds = [k for k, _ in blocks]
     headings = kinds.count("heading_open")
-    paragraphs = kinds.count("paragraph_open")
-    other = [k for k in kinds
-             if k not in REPEATABLE and k not in ("heading_open", "paragraph_open")]
-    words = prose_words(body, blocks)
-    diagrams = sum(1 for k in kinds if k in DIAGRAM)
+    para_words = [words_in(body, s) for k, s in blocks if k == "paragraph_open"]
+    other = [k for k in kinds if k not in STRUCTURE and k not in PROSE]
+    stacked = sum(1 for a, b in zip(kinds, kinds[1:])
+                  if a == "heading_open" and b == "heading_open")
+    over = [n for n in para_words if n > MAX_PARAGRAPH_WORDS]
+    prose = sum(words_in(body, s) for k, s in blocks if k in PROSE)
+    free = sum(1 for k in kinds if k in STRUCTURE)
 
     rules = [
-        (headings <= MAX_HEADINGS, "headings", "%d (at most %d)" % (headings, MAX_HEADINGS)),
-        (paragraphs == EXACT_PARAGRAPHS, "paragraphs",
-         "%d (exactly %d)" % (paragraphs, EXACT_PARAGRAPHS)),
+        (headings != 1, "headings",
+         "%d (0 or 2+; exactly one restates the PR title)" % headings),
+        (stacked == 0, "heading order",
+         "%d heading(s) with nothing under them" % stacked if stacked
+         else "every heading introduces content"),
+        (len(para_words) >= 1, "paragraphs", "%d (at least one)" % len(para_words)),
+        (not over, "paragraph size",
+         "longest %d words (at most %d each)"
+         % (max(para_words or [0]), MAX_PARAGRAPH_WORDS)),
         (not other, "block types",
          "disallowed: %s" % ", ".join(sorted(set(other))) if other
-         else "tables, lists and diagrams only"),
-        (words <= MAX_WORDS, "prose words",
-         "%d of %d, with %d diagram(s) exempt" % (words, MAX_WORDS, diagrams)),
+         else "%d table/list/diagram block(s), all unmeasured" % free),
+        (prose <= MAX_PROSE_WORDS, "prose words",
+         "%d of %d in headings and paragraphs" % (prose, MAX_PROSE_WORDS)),
     ]
     failures = []
     for ok, name, detail in rules:
         if verbose:
-            print("  %-4s %-12s %s" % ("ok" if ok else "FAIL", name, detail))
+            print("  %-4s %-15s %s" % ("ok" if ok else "FAIL", name, detail))
         if not ok:
             failures.append((name, detail))
     return failures, blocks
@@ -135,48 +176,61 @@ def fetch(repo, number):
 def self_test():
     """NEGATIVE CONTROLS, one per way the shape can be wrong.
 
-    The positive control runs first and on its own terms: if the gate rejects a body that is
-    already correct, every rejection below it is noise rather than evidence.
+    The positive controls run first and on their own terms: if the gate rejects a body that
+    is already correct, every rejection below is noise rather than evidence.
     """
-    good = ("## Title\n\nOne paragraph saying what changed and why.\n\n"
-            "| a | b |\n| - | - |\n| 1 | 2 |\n\n- an entry\n\n```mermaid\ngraph LR\nA-->B\n```\n")
-    huge = "```mermaid\ngraph LR\n" + "\n".join(
-        "N%d-->N%d" % (i, i + 1) for i in range(400)) + "\n```\n"
+    para = "A short paragraph of prose saying what changed and why it changed.\n"
+    layered = ("## First section\n\n" + para + "\n| a | b |\n| - | - |\n| 1 | 2 |\n\n"
+               "## Second section\n\n" + para + "\n- an entry\n\n"
+               "```mermaid\ngraph LR\nA-->B\n```\n")
+    headless = para + "\n- an entry\n"
+    # The exemption is a claim in its own right, so it gets its own positive control. A gate
+    # that quietly counted table cells or list items would pass every other case here.
+    big_structure = (
+        para + "\n| a | b |\n| - | - |\n"
+        + "".join("| %s | %s |\n" % (" ".join("w%d" % j for j in range(12)),
+                                     " ".join("x%d" % j for j in range(12)))
+                  for _ in range(60))
+        + "\n" + "".join("- %s\n" % " ".join("item%d" % j for j in range(12))
+                         for _ in range(60))
+        + "\n```mermaid\ngraph LR\n"
+        + "\n".join("N%d-->N%d" % (i, i + 1) for i in range(400)) + "\n```\n")
 
-    controls = [
-        ("two paragraphs", good.replace("and why.\n", "and why.\n\nA second paragraph.\n")),
-        ("two headings", good + "\n## Another heading\n"),
-        ("no paragraph at all", "## Title\n\n- only a list\n"),
-        ("a blockquote", good + "\n> quoted prose\n"),
-        ("a horizontal rule", good + "\n---\n"),
-        ("%d prose words" % (MAX_WORDS + 1),
-         "## T\n\n" + " ".join("w%d" % i for i in range(MAX_WORDS + 1)) + "\n"),
-        ("%d words hidden in a table" % (MAX_WORDS + 1),
-         "## T\n\nx\n\n| a |\n| - |\n" + "".join(
-             "| %s |\n" % " ".join("w%d" % j for j in range(10))
-             for _ in range((MAX_WORDS // 10) + 2))),
+    positives = [
+        ("two headings, short paragraphs, table, list and diagram", layered),
+        ("no headings at all, which is still a legal shape", headless),
+        ("a 60-row table, a 60-item list and an 800-line diagram cost nothing",
+         big_structure),
+    ]
+    negatives = [
+        ("exactly one heading, which restates the title", "## Only one\n\n" + para),
+        ("two headings in a row, the first naming an empty section",
+         "## First\n\n## Second\n\n" + para),
+        ("no paragraph anywhere", "## First\n\n- only a list\n\n## Second\n\n- another\n"),
+        ("one paragraph of %d words" % (MAX_PARAGRAPH_WORDS + 1),
+         " ".join("w%d" % i for i in range(MAX_PARAGRAPH_WORDS + 1)) + "\n"),
+        # Three paragraphs each inside the per-paragraph bound but over the total. The
+        # per-paragraph rule cannot catch this and the total cannot catch a single long
+        # paragraph, so the two bounds each need their own control.
+        ("three legal paragraphs totalling over %d words" % MAX_PROSE_WORDS,
+         "\n\n".join(" ".join("w%d" % i for i in range(60)) for _ in range(3)) + "\n"),
+        ("a blockquote", headless + "\n> quoted prose\n"),
+        ("a horizontal rule", headless + "\n---\n"),
+        ("a raw HTML block", headless + "\n<div>raw</div>\n"),
     ]
 
-    failures, blocks = check(good, verbose=False)
-    print("  %-4s positive control: heading, paragraph, table, list and diagram pass"
-          % ("ok" if not failures else "FAIL"))
-    if failures:
-        print("       rejected a correct body (%s); the controls below prove nothing."
-              % ", ".join(n for n, _ in failures))
-        print("       blocks seen: %s" % [k for k, _ in blocks])
-        return 1
-
-    # The exemption is a claim in its own right and needs its own positive control. Without
-    # it, a gate that silently counted fence lines would still pass every case above.
-    big = check(good + "\n" + huge, verbose=False)[0]
-    print("  %-4s positive control: an 800-line diagram does not spend the word budget"
-          % ("ok" if not big else "FAIL"))
-    if big:
-        print("       diagrams are supposed to be unbounded and this one was charged.")
-        return 1
+    for name, body in positives:
+        failures, blocks = check(body, verbose=False)
+        print("  %-4s positive control: %s" % ("ok" if not failures else "FAIL", name))
+        if failures:
+            print("       rejected a correct body: %s"
+                  % "; ".join("%s %s" % (n, d) for n, d in failures))
+            print("       the controls below would prove nothing. blocks: %s"
+                  % [k for k, _ in blocks])
+            return 1
 
     bad = 0
-    for name, body in controls:
+    for name, body in negatives:
         caught = bool(check(body, verbose=False)[0])
         print("  %-4s negative control: %s is rejected" % ("ok" if caught else "FAIL", name))
         if not caught:
@@ -184,7 +238,7 @@ def self_test():
     if bad:
         print("       %d shape(s) the gate claims to reject and does not." % bad)
         return 1
-    print("  %d of %d rejected." % (len(controls), len(controls)))
+    print("  %d of %d rejected." % (len(negatives), len(negatives)))
     return 0
 
 
@@ -229,12 +283,15 @@ def main():
     if failures:
         print("The description is outside the shape this repository allows, on %d rule(s)."
               % len(failures))
-        print("One heading, one paragraph, tables, lists and diagrams, %d words of prose."
-              % MAX_WORDS)
-        print("Longer reasoning belongs in the commit message, which has no bound.")
+        print("Sections a reader can scan: no headings or two, each with content under it,")
+        print("paragraphs of %d words or fewer, %d words of prose in total."
+              % (MAX_PARAGRAPH_WORDS, MAX_PROSE_WORDS))
+        print("Tables, lists and diagrams are unlimited. Move detail into one of those,")
+        print("or into the commit message, which has no bound at all.")
         return 1
-    print("Within the shape: one heading, one paragraph, tables, lists and diagrams,")
-    print("%d words of prose, diagrams unbounded." % MAX_WORDS)
+    print("Within the shape: scannable sections, paragraphs of %d words or fewer,"
+          % MAX_PARAGRAPH_WORDS)
+    print("%d words of prose, tables, lists and diagrams unmeasured." % MAX_PROSE_WORDS)
     return 0
 
 
