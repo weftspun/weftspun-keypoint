@@ -64,12 +64,6 @@
   <project name="logbook" path=".logbook" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
-    <!-- pre-commit reads its config from the directory it runs in, and the root is where
-         a workspace-wide run starts. Without this the root has no config, so `pre-commit
-         run` there is a no-op that exits 0 - a silent skip, which reads exactly like a
-         pass. Linked rather than copied for the same reason as the rest: one config, and
-         the logbook is where it is maintained. -->
-    <linkfile src=".pre-commit-config.yaml" dest=".pre-commit-config.yaml" />
     <!-- The root is what a citation tool finds first, and it had nothing to find. The
          logbook is the record other repositories cite, so its CITATION.cff is the one
          that belongs here. Linked rather than copied, like the rest: the citation and
