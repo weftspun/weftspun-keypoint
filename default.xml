@@ -70,6 +70,11 @@
          pass. Linked rather than copied for the same reason as the rest: one config, and
          the logbook is where it is maintained. -->
     <linkfile src=".pre-commit-config.yaml" dest=".pre-commit-config.yaml" />
+    <!-- The root is what a citation tool finds first, and it had nothing to find. The
+         logbook is the record other repositories cite, so its CITATION.cff is the one
+         that belongs here. Linked rather than copied, like the rest: the citation and
+         the record it describes cannot fall out of step if they are one file. -->
+    <linkfile src="CITATION.cff" dest="CITATION.cff" />
   </project>
   <!-- The root opens on the argument rather than on a note about the manifest's
        name. RFD 107a is what this goal is for: the wholebody gap, and the

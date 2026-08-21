@@ -19,19 +19,24 @@ THE SHAPE, AS BLOCK NODES AT THE TOP LEVEL OF THE AST:
     all prose       at most 144 words   headings and paragraphs together
     anything else   rejected
 
-WHY THIS SHAPE AND NOT ANOTHER. It is not taste. Nielsen Norman's eye-tracking work names
-two patterns a reader falls into. The LAYER-CAKE pattern - fixating on headings, dropping
-into the body text between them only deliberately - happens on pages with visually distinct
-headings, and it is the efficient one: a reader scans straight to the section they need. The
-F-PATTERN happens instead when a page is "columns of text with little text that stands out",
-and NN/g calls it the low-efficiency case, where people "inadvertently miss meaningful
-information".
+WHY THIS SHAPE AND NOT ANOTHER. It is not taste. Pernice (2019) [1] names two patterns a
+reader falls into. The LAYER-CAKE pattern - fixating on headings, dropping into the body text
+between them only deliberately - happens on pages with visually distinct headings, and it is
+the efficient one: a reader scans straight to the section they need. The F-PATTERN happens
+instead when a page is "columns of text with little text that stands out", and is the
+low-efficiency case, where people "inadvertently miss meaningful information".
 
 That finding is about which shape gets read, not about which is prettier, which is why it is
-the one worth encoding. The measurement on pull requests specifically agrees: a study of
-description characteristics found header density and list density associated with faster
-reviewer response and shorter completion time, at a medium-to-large effect size, and named
-limited use of headers and lists as a cause of reduced readability.
+the one worth encoding. The measurement on pull requests specifically agrees: Watanabe et al.
+(2026) [2] scored description characteristics as densities per 1,000 characters and found
+header density and list density associated with faster reviewer response and shorter
+completion time, reporting a medium-to-large effect size for structure against completion
+time, and naming limited use of headers and lists as a cause of reduced readability.
+
+Both are associational rather than causal, and [2] says so itself: presentation does not
+determine acceptance, and code quality remains the central factor in whether a pull request
+lands. What is being claimed here is narrower and is all the rule needs - that this shape is
+read more completely than the alternative, not that it makes a change correct.
 
 RETRACTED: NO HEADINGS AT ALL. An earlier version of this gate rejected every heading. The
 argument was that a lone heading restates the pull request title one line below the pull
@@ -42,7 +47,7 @@ case forced every description into the F-pattern shape NN/g measured as the one 
 readers miss things. The rule is kept where it holds and dropped where it does not.
 
 EVERY HEADING INTRODUCES CONTENT. Two headings in a row means the first named a section with
-nothing in it. NN/g's guidance is that a subheading is "descriptive of all topics in the
+nothing in it. The guidance in [1] is that a subheading is "descriptive of all topics in the
 section, and only topics in the section", which an empty section cannot satisfy. This is
 also the cheapest way a document fakes structure: stack the headings, and it looks scannable
 in outline and delivers nothing when scanned.
@@ -71,6 +76,18 @@ their words not counted against the budget.
 Tables are GFM rather than core CommonMark, so the parser is CommonMark with the table rule
 enabled - the dialect GitHub actually renders the description in. A gate measuring a
 different grammar than the reader sees would be measuring the convenient proxy.
+
+REFERENCES. Cited in full rather than linked, because a bare URL rots and a reader six
+months from now needs to know whose finding this was and when.
+
+[1] Pernice, Kara. "The Layer-Cake Pattern of Scanning Content on the Web."
+    Nielsen Norman Group, 4 August 2019.
+    https://www.nngroup.com/articles/layer-cake-pattern-scanning/
+
+[2] Watanabe, Kan; Tsuchida, Rikuto; Monno, Takahiro; Huang, Bin; Yamasaki, Kazuma;
+    Fan, Youmei; Shimari, Kazumasa; Matsumoto, Kenichi. "How AI Coding Agents Communicate:
+    A Study of Pull Request Description Characteristics and Human Review Responses."
+    arXiv:2602.17084, 19 February 2026. https://arxiv.org/abs/2602.17084
 
 Run:  python check_pr_description.py --pr 3 [--repo owner/name]
       python check_pr_description.py --body-file draft.md
