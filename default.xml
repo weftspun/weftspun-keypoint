@@ -52,6 +52,7 @@
   <project name="logbook" path=".logbook" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
+    <linkfile src="KEYPOINTS.md" dest="KEYPOINTS.md" />
   </project>
   <project name="request-for-discussion" path=".request_for_discussion" remote="weftspun" revision="main" />
   <project name="tropes-removal-model" path=".tropes_removal_model" remote="weftspun" revision="main" />
