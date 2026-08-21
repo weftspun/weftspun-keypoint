@@ -64,6 +64,12 @@
   <project name="logbook" path=".logbook" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
+    <!-- pre-commit reads its config from the directory it runs in, and the root is where
+         a workspace-wide run starts. Without this the root has no config, so `pre-commit
+         run` there is a no-op that exits 0 - a silent skip, which reads exactly like a
+         pass. Linked rather than copied for the same reason as the rest: one config, and
+         the logbook is where it is maintained. -->
+    <linkfile src=".pre-commit-config.yaml" dest=".pre-commit-config.yaml" />
   </project>
   <!-- The root opens on the argument rather than on a note about the manifest's
        name. RFD 107a is what this goal is for: the wholebody gap, and the
