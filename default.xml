@@ -70,6 +70,18 @@
          pass. Linked rather than copied for the same reason as the rest: one config, and
          the logbook is where it is maintained. -->
     <linkfile src=".pre-commit-config.yaml" dest=".pre-commit-config.yaml" />
+    <!-- The root is what a citation tool finds first, and it had nothing to find. The
+         logbook is the record other repositories cite, so its CITATION.cff is the one
+         that belongs here. Linked rather than copied, like the rest: the citation and
+         the record it describes cannot fall out of step if they are one file. -->
+    <linkfile src="CITATION.cff" dest="CITATION.cff" />
+    <!-- Dual Apache-2.0 OR MIT, which is what the logbook's own SPDX header says. Two
+         files rather than one because that is what dual licensing is: a reader picks,
+         and a single LICENSE cannot offer a choice. Linked for the same reason as the
+         citation beside them. A licence copied to the root is a licence that can end
+         up saying something the repository does not. -->
+    <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
+    <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
   </project>
   <!-- The root opens on the argument rather than on a note about the manifest's
        name. RFD 107a is what this goal is for: the wholebody gap, and the
