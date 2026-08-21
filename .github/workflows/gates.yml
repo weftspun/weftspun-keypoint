@@ -1,0 +1,71 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+#
+# Both gates fail the check run. Neither warns.
+#
+# WHAT CI CANNOT CHECK, NAMED RATHER THAN OMITTED. check_manifest_root.py compares the files
+# at a workspace root against the manifest that placed them, and CI has no workspace: this
+# repository is the manifest, not a `repo` client, and syncing one here would download every
+# project in the goal to test four symlinks. So CI runs that gate's self-test only, which
+# proves the gate still rejects all seven ways a root file can go wrong, and proves nothing
+# about anybody's checkout. The full run is `python check_manifest_root.py <workspace>` and
+# it belongs on a desk, not here. A silent skip reads exactly like a pass, so this paragraph
+# exists to stop that reading.
+#
+# The description gate has no such gap. It reads the pull request body from the API, which is
+# the same text the reviewer sees.
+
+name: gates
+
+on:
+  pull_request:
+    # `edited` matters more than usual here: the description is the thing under test, and it
+    # is most often fixed by editing it rather than by pushing a commit.
+    types: [opened, edited, synchronize, reopened]
+  push:
+    branches: [main]
+
+jobs:
+  pr-description:
+    # Skipped on push, where there is no description to measure. This is the one skip in the
+    # file and it is a genuine absence rather than an unchecked case.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install markdown-it-py
+      - name: negative controls
+        run: python check_pr_description.py --self-test
+      - name: this pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python check_pr_description.py --pr ${{ github.event.number }} --repo ${{ github.repository }}
+
+  manifest-root:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: manifest is well-formed
+        run: python -c "import xml.etree.ElementTree as E; E.parse('default.xml')"
+      - name: no copyfile is declared
+        # The construct check needs no workspace, so unlike the identity half of this gate it
+        # does run on every push. A copyfile cannot reach main.
+        run: |
+          python - <<'PY'
+          import sys, xml.etree.ElementTree as E
+          copies = [(p.get('path') or p.get('name'), c.get('dest'))
+                    for p in E.parse('default.xml').getroot().iter('project')
+                    for c in p.findall('copyfile')]
+          for project, dest in copies:
+              print("FAIL %-12s copyfile declared by %s" % (dest, project))
+          print("%d copyfile entr%s in the manifest."
+                % (len(copies), "y" if len(copies) == 1 else "ies"))
+          sys.exit(1 if copies else 0)
+          PY
+      - name: negative controls
+        run: python check_manifest_root.py --self-test
