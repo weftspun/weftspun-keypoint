@@ -50,22 +50,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: manifest is well-formed
-        run: python -c "import xml.etree.ElementTree as E; E.parse('default.xml')"
-      - name: no copyfile is declared
-        # The construct check needs no workspace, so unlike the identity half of this gate it
-        # does run on every push. A copyfile cannot reach main.
-        run: |
-          python - <<'PY'
-          import sys, xml.etree.ElementTree as E
-          copies = [(p.get('path') or p.get('name'), c.get('dest'))
-                    for p in E.parse('default.xml').getroot().iter('project')
-                    for c in p.findall('copyfile')]
-          for project, dest in copies:
-              print("FAIL %-12s copyfile declared by %s" % (dest, project))
-          print("%d copyfile entr%s in the manifest."
-                % (len(copies), "y" if len(copies) == 1 else "ies"))
-          sys.exit(1 if copies else 0)
-          PY
+      # Controls first. A check whose controls have not run yet is a check nobody has
+      # reason to believe, so the order is deliberate rather than incidental.
       - name: negative controls
         run: python check_manifest_root.py --self-test
+      - name: manifest parses and declares no copyfile
+        # This used to be two inline steps: an `E.parse` one-liner and eight lines of Python
+        # in a heredoc. Both were real logic living where no control could reach them, which
+        # is the same defect the controls above exist to prevent - and they looked correct
+        # the entire time. The logic moved into the gate, where it now has four controls of
+        # its own, and the workflow calls it instead of reimplementing it.
+        run: python check_manifest_root.py --manifest-only --manifest default.xml

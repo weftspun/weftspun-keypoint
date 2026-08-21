@@ -132,8 +132,43 @@ def check_bookkeeping(root, declared):
     return problems
 
 
+def check_manifest_only(manifest, verbose=True):
+    """The half that needs no workspace: the manifest parses, and declares no copyfile.
+
+    Split out so CI can run it on every push. It used to be eight lines of Python inside
+    the workflow YAML, where nothing could exercise it - logic with no control is decoration
+    however obviously correct it looks, and this is the same rule that put negative controls
+    in self_test(). Living here, it gets two.
+    """
+    try:
+        declared = entries(manifest)
+    except ET.ParseError as exc:
+        # Not a crash. A manifest that does not parse is a FAIL with a reason, because a
+        # traceback is a worse report than a line saying which construct broke. An XML
+        # comment containing a double hyphen is the way this is usually reached.
+        if verbose:
+            print("  FAIL %-12s %-9s does not parse: %s" % ("(manifest)", "", exc))
+        return None, ["manifest does not parse: %s" % exc]
+
+    problems = []
+    for kind, project, src, dest in declared:
+        if kind != "copyfile":
+            continue
+        problems.append((dest, project))
+        if verbose:
+            print("  FAIL %-12s %-9s declared by %s" % (dest, kind, project))
+    if verbose and not problems:
+        print("  ok   %-12s %-9s %d entries, none of them copies"
+              % ("(manifest)", "", len(declared)))
+    return declared, problems
+
+
 def check(root, manifest, verbose=True):
-    declared = entries(manifest)
+    declared, broken = check_manifest_only(manifest, verbose=False)
+    if declared is None:
+        if verbose:
+            print("  FAIL %-12s %-9s %s" % ("(manifest)", "", broken[0]))
+        return [], [], broken
     failures = []
     for kind, project, src, dest in declared:
         ok, note = check_entry(root, kind, project, src, dest)
@@ -213,6 +248,14 @@ def self_test():
         with open(os.path.join(tmp, BOOKKEEPING), "w") as fh:
             json.dump({"linkfile": ["LINK.md"], "copyfile": ["STRAY.md"]}, fh)
 
+    def unparseable(tmp, manifest):
+        # A double hyphen inside an XML comment. Illegal, and the way this is actually hit:
+        # it is what an em-dash-shaped sentence turns into when somebody types two hyphens.
+        with open(manifest, "w") as fh:
+            fh.write('<manifest><!-- a -- b --><project name="proj" path="proj">'
+                     '<linkfile src="SRC.md" dest="LINK.md" />'
+                     "</project></manifest>\n")
+
     controls = [
         ("a copyfile entry whose bytes match its source", declare_copyfile),
         ("a linkfile repointed at another file", repoint),
@@ -221,6 +264,15 @@ def self_test():
         ("a destination removed outright", vanish),
         ("bookkeeping naming a link the manifest does not", stale_book),
         ("bookkeeping recording a copy at the root", stray_copy),
+        ("a manifest that does not parse", unparseable),
+    ]
+    # The workspace-free path gets its own controls rather than borrowing the ones above.
+    # It is a different entry point, and a control that never calls it proves nothing about
+    # it - which was the defect: this logic used to sit in the workflow with no control at
+    # all, and looked correct the whole time.
+    manifest_only = [
+        ("a copyfile declared, with no workspace to compare against", declare_copyfile),
+        ("a manifest that does not parse, with no workspace", unparseable),
     ]
 
     tmp = tempfile.mkdtemp()
@@ -250,10 +302,35 @@ def self_test():
                 bad += 1
         finally:
             shutil.rmtree(tmp)
+    tmp = tempfile.mkdtemp()
+    try:
+        manifest = fixture(tmp)
+        _, clean = check_manifest_only(manifest, verbose=False)
+        print("  %-4s positive control: a linkfile-only manifest passes with no workspace"
+              % ("ok" if not clean else "FAIL"))
+        if clean:
+            return 1
+    finally:
+        shutil.rmtree(tmp)
+
+    for name, mutate in manifest_only:
+        tmp = tempfile.mkdtemp()
+        try:
+            manifest = fixture(tmp)
+            mutate(tmp, manifest)
+            caught = bool(check_manifest_only(manifest, verbose=False)[1])
+            print("  %-4s negative control: %s is rejected"
+                  % ("ok" if caught else "FAIL", name))
+            if not caught:
+                bad += 1
+        finally:
+            shutil.rmtree(tmp)
+
     if bad:
         print("       %d mode(s) the gate claims to catch and does not." % bad)
         return 1
-    print("  %d of %d rejected." % (len(controls), len(controls)))
+    print("  %d of %d rejected." % (len(controls) + len(manifest_only),
+                                    len(controls) + len(manifest_only)))
     return 0
 
 
@@ -263,16 +340,36 @@ def main():
                     help="the repo client root; omit with --self-test")
     ap.add_argument("--manifest", default=None,
                     help="default: <workspace>/%s" % DEFAULT_MANIFEST)
+    ap.add_argument("--manifest-only", action="store_true",
+                    help="parse and block copyfile without needing a workspace")
     ap.add_argument("--self-test", action="store_true",
                     help="prove the gate rejects each way a root file can be wrong")
     args = ap.parse_args()
 
     if args.self_test and self_test():
         return 1
+
+    if args.manifest_only:
+        manifest = args.manifest or (os.path.join(os.path.abspath(args.workspace),
+                                                  DEFAULT_MANIFEST)
+                                     if args.workspace else "default.xml")
+        print()
+        declared, problems = check_manifest_only(manifest)
+        print()
+        if problems:
+            print("Replace each <copyfile> with <linkfile>: a copy drifts, a link cannot.")
+            return 1
+        # Said out loud, because the whole point of this mode is that it checks less. A run
+        # that reported only "ok" would read as a full check to anybody skimming the log.
+        print("%d entries declared, 0 copyfile. The links themselves are NOT checked here;"
+              % len(declared))
+        print("that needs a workspace: python %s <workspace>" % os.path.basename(__file__))
+        return 0
+
     if args.workspace is None:
         if args.self_test:
             return 0
-        ap.error("a workspace is required unless --self-test is given")
+        ap.error("a workspace is required unless --self-test or --manifest-only is given")
 
     root = os.path.abspath(args.workspace)
     manifest = args.manifest or os.path.join(root, DEFAULT_MANIFEST)
