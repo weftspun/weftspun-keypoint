@@ -61,3 +61,18 @@ jobs:
         # the entire time. The logic moved into the gate, where it now has four controls of
         # its own, and the workflow calls it instead of reimplementing it.
         run: python check_manifest_root.py --manifest-only --manifest default.xml
+
+  manifest-comments:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # Controls first, for the same reason as above.
+      - name: negative controls
+        run: python check_manifest_comments.py --self-test
+      # No pinned dependency and nothing to install: the gate is stdlib only, because the
+      # thing it reads is text and the thing it parses is `xml.etree`.
+      - name: the manifest holds data and nothing else
+        run: python check_manifest_comments.py default.xml

@@ -8,18 +8,6 @@
 
   <default sync-j="16" />
 
-  <!-- Corpus, and keypoint detection.
-
-       The corpus this renders and the model it trains: 104-keypoint wholebody detection
-       from ANNY renders, with pose-consensus refereeing what a pose actually was.
-       
-       entities-godot appears twice because CineForm carries the depth the renderer
-       writes, and the reader has to be reviewed against a main that moved under it.
-       
-       The sinew projects are here rather than beside the mesh work because motion
-       capture produces keypoints, which is the same label this corpus supervises.
-  -->
-
   <project name="weftspun-studio" path="1-transport/weftspun-studio" remote="weftspun" revision="main" />
   <project name="easy-diffusion-mcp" path="1-transport/easy-diffusion-mcp" remote="weftspun" revision="main" />
   <project name="rf-detr-mcp" path="1-transport/rf-detr-mcp" remote="weftspun" revision="main" />
@@ -30,15 +18,6 @@
   <project name="viewer" path="1-transport/sinew-viewer" remote="sinew-mocap" revision="main" />
   <project name="osc-tester" path="1-transport/sinew-osc-tester" remote="sinew-mocap" revision="main" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
-  <!-- The manuals are on the contract side because that is what they are: the
-       numbering space, the states and the conventions every RFD in this workspace
-       is written against. They allocate out of one space with
-       weftspun/request-for-discussion, which is why the collision was possible at
-       all, and an unplaced project is exactly what let it go unnoticed.
-
-       They stay two repositories. v-sekai/manuals keeps dated MADR records and
-       numbers nothing; the fabric manuals keep numbered RFDs. Neither is merged
-       into the other. -->
   <project name="multiplayer-fabric-manuals" path="2-contract/multiplayer-fabric-manuals" remote="v-sekai-fabric" revision="main" />
   <project name="manuals" path="2-contract/manuals" remote="v-sekai" revision="main" />
   <project name="swing-twist-kusudama" path="2-contract/swing-twist-kusudama" remote="v-sekai-fabric" revision="main" />
@@ -64,32 +43,10 @@
   <project name="logbook" path="2-contract/logbook" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
-    <!-- The root is what a citation tool finds first, and it had nothing to find. The
-         logbook is the record other repositories cite, so its CITATION.cff is the one
-         that belongs here. Linked rather than copied, like the rest: the citation and
-         the record it describes cannot fall out of step if they are one file. -->
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
-    <!-- Dual Apache-2.0 OR MIT, which is what the logbook's own SPDX header says. Two
-         files rather than one because that is what dual licensing is: a reader picks,
-         and a single LICENSE cannot offer a choice. Linked for the same reason as the
-         citation beside them. A licence copied to the root is a licence that can end
-         up saying something the repository does not. -->
     <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
     <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
   </project>
-  <!-- The root opens on the argument rather than on a note about the manifest's
-       name. RFD 107a is what this goal is for: the wholebody gap, and the
-       renderer that closes it. README.md is its summary and DETAILS.md its
-       detail, so both come across and keep the names they already have.
-
-       linkfile, never copyfile, and check_manifest_root.py enforces that rather
-       than trusting it. A copy is an ordinary writable file between syncs, so an
-       edit at the root lands somewhere real, survives, and is then overwritten
-       with no report, and nothing says which side was the newer one. A
-       link has no in-between state to lose. The cost is that the root resolves
-       into 2-contract/request_for_discussion/107a-the-wholebody-gap/ and the
-       reader sees the path they landed in. Edit 107a; the root is another name
-       for it. -->
   <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main">
     <linkfile src="107a-the-wholebody-gap/README.md" dest="README.md" />
     <linkfile src="107a-the-wholebody-gap/DETAILS.md" dest="DETAILS.md" />
