@@ -61,7 +61,7 @@
   <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
   <project name="elixir-holographic-reduced-representation" path="4-entities/elixir-holographic-reduced-representation" remote="weftspun" revision="main" />
   <project name="entities-humanoid-rom" path="4-entities/humanoid-rom" remote="v-sekai-fabric" revision="main" />
-  <project name="logbook" path=".logbook" remote="weftspun" revision="main">
+  <project name="logbook" path="2-contract/logbook" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
     <!-- The root is what a citation tool finds first, and it had nothing to find. The
@@ -87,13 +87,14 @@
        edit at the root lands somewhere real, survives, and is then overwritten
        with no report, and nothing says which side was the newer one. A
        link has no in-between state to lose. The cost is that the root resolves
-       into .request_for_discussion/107a-the-wholebody-gap/ and the reader sees
-       the path they landed in. Edit 107a; the root is another name for it. -->
-  <project name="request-for-discussion" path=".request_for_discussion" remote="weftspun" revision="main">
+       into 2-contract/request_for_discussion/107a-the-wholebody-gap/ and the
+       reader sees the path they landed in. Edit 107a; the root is another name
+       for it. -->
+  <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main">
     <linkfile src="107a-the-wholebody-gap/README.md" dest="README.md" />
     <linkfile src="107a-the-wholebody-gap/DETAILS.md" dest="DETAILS.md" />
   </project>
-  <project name="tropes-removal-model" path=".tropes_removal_model" remote="weftspun" revision="main" />
+  <project name="tropes-removal-model" path="2-contract/tropes_removal_model" remote="weftspun" revision="main" />
   <project name=".github" path=".github" remote="weftspun" revision="main" />
   <project name="dataflow-coco-gemx" path="6-datasource/dataflow-coco-gemx" remote="weftspun" revision="main" />
   <project name="versitygw-local" path="6-datasource/versitygw-local" remote="weftspun" revision="main" />
