@@ -21,7 +21,8 @@ loses and nothing says which one it was. A symlink has no in-between state to lo
 is one inode under two names, and editing either edits the file.
 
 The cost of the block is stated rather than hidden. A link at the root resolves into the
-project it points at, so a root `README.md` opens `.request_for_discussion/<rfd>/README.md`
+project it points at, so a root `README.md` opens
+`2-contract/request_for_discussion/<rfd>/README.md`
 and a reader sees the path they landed in. That is a real loss of framing, and it is
 cheaper than a second copy that drifts, because drift is silent and a visible path is not.
 
