@@ -64,6 +64,7 @@
   <project name="logbook" path="2-contract/logbook" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
+    <linkfile src="rfd107a-plan.usda" dest="rfd107a-plan.usda" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
     <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
     <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
