@@ -78,7 +78,7 @@
   <project name="weftspun-character-taxonomy" path="2-contract/weftspun-character-taxonomy" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name=".github" path=".github" remote="weftspun" revision="main" />
   <project name="repository-side" path="5-repository/side" remote="weftspun" revision="main" />
-  <project name="hailo_model_zoo" path="5-repository/hailo-model-zoo" remote="weftspun" revision="67b5dcb9b637166b914da3e46aa29b1f4388ffcb" />
+  <project name="hailo_model_zoo" path="5-repository/hailo-model-zoo" remote="weftspun" revision="ce2c5be071c65c68208c1631684be89db7d23b41" />
   <project name="anny-render-corpus" path="6-datasource/anny-render-corpus" remote="weftspun" revision="e5617b56f6efe286297dd253e151738f8b1f970a" />
   <project name="versitygw-local" path="6-datasource/versitygw-local" remote="weftspun" revision="main" />
   <project name="rf-detr-detection-data" path="6-datasource/rf-detr-detection-data" remote="weftspun" revision="main" />
