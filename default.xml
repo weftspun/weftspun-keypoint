@@ -12,6 +12,7 @@
   <project name="easy-diffusion-mcp" path="1-transport/easy-diffusion-mcp" remote="weftspun" revision="main" />
   <project name="rf-detr-mcp" path="1-transport/rf-detr-mcp" remote="weftspun" revision="main" />
   <project name="runpod-chat-tui" path="1-transport/runpod-chat-tui" remote="weftspun" revision="main" />
+  <project name="transport-cineform-tui" path="1-transport/transport-cineform-tui" remote="weftspun" revision="main" />
   <project name="ex_mcp" path="1-transport/ex_mcp" remote="weftspun" revision="main" />
   <project name="driver" path="1-transport/sinew-driver" remote="sinew-mocap" revision="main" />
   <project name="vr-bridge" path="1-transport/sinew-vr-bridge" remote="sinew-mocap" revision="main" />
@@ -29,6 +30,7 @@
   <project name="interactor-seethrough-torch" path="3-interactor/seethrough-torch" remote="weftspun" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-main" remote="v-sekai-fabric" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-cineform" remote="v-sekai-fabric" revision="cineform-movie-writer" />
+  <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
   <project name="cyclegan-style-transfer" path="3-interactor/cyclegan-style-transfer" remote="weftspun" revision="main" />
   <project name="interactor-seethrough-tinygrad" path="3-interactor/seethrough-tinygrad" remote="weftspun" revision="main" />
   <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
@@ -93,6 +95,7 @@
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
+  <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="packaging" path="7-service/sinew-packaging" remote="sinew-mocap" revision="main" />
   <project name="homebrew-sinew" path="7-service/sinew-homebrew" remote="sinew-mocap" revision="main" />
   <project name="scoop-bucket" path="7-service/sinew-scoop-bucket" remote="sinew-mocap" revision="main" />
