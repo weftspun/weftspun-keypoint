@@ -72,6 +72,7 @@
     <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
   </project>
   <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main" />
+  <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
   <project name="tropes-removal-model" path="2-contract/tropes_removal_model" remote="weftspun" revision="main" />
   <project name="tensor-copy-cost-model" path="2-contract/tensor-copy-cost-model" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="trellis2-mesh-vae-slang" path="2-contract/trellis2-mesh-vae-slang" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
