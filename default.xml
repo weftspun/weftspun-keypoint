@@ -61,16 +61,13 @@
   <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
   <project name="elixir-holographic-reduced-representation" path="4-entities/elixir-holographic-reduced-representation" remote="weftspun" revision="main" />
   <project name="entities-humanoid-rom" path="4-entities/humanoid-rom" remote="v-sekai-fabric" revision="main" />
-  <project name="logbook" path="2-contract/logbook" remote="weftspun" revision="main">
-    <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
-    <linkfile src="CLAUDE.md" dest="AGENTS.md" />
-    <linkfile src="CITATION.cff" dest="CITATION.cff" />
-    <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
-    <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
-  </project>
   <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main">
     <linkfile src="107a-the-wholebody-gap/README.md" dest="README.md" />
     <linkfile src="107a-the-wholebody-gap/DETAILS.md" dest="DETAILS.md" />
+    <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
+    <linkfile src="CLAUDE.md" dest="AGENTS.md" />
+    <linkfile src="CITATION.cff" dest="CITATION.cff" />
+    <linkfile src="LICENSE" dest="LICENSE" />
   </project>
   <project name="tropes-removal-model" path="2-contract/tropes_removal_model" remote="weftspun" revision="main" />
   <project name="tensor-copy-cost-model" path="2-contract/tensor-copy-cost-model" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
