@@ -45,12 +45,9 @@
   <project name="mujoco-riscv64" path="3-interactor/mujoco-riscv64" remote="v-sekai-fabric" revision="main" />
   <project name="bumblebee" path="3-interactor/bumblebee" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-krea2-turbo-text-to-image" path="3-interactor/krea2-turbo-text-to-image" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-p3sam-mesh-segmentation" path="3-interactor/p3sam-mesh-segmentation" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="interactor-pixal3d-image-to-textured-mesh" path="3-interactor/pixal3d-image-to-textured-mesh" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-qwen-image-edit" path="3-interactor/qwen-image-edit" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="interactor-qwen35-defiant" path="3-interactor/qwen35-defiant" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="residual-fsq-recommender" path="3-interactor/residual-fsq-recommender" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="trellis2-ex" path="3-interactor/trellis2-ex" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
