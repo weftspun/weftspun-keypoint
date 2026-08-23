@@ -5,6 +5,7 @@
   <remote name="sinew-mocap" fetch="https://github.com/sinew-mocap" />
   <remote name="v-sekai-fabric" fetch="https://github.com/v-sekai-fabric" />
   <remote name="v-sekai" fetch="https://github.com/v-sekai" />
+  <remote name="laurencelundblade" fetch="https://github.com/laurencelundblade" />
 
   <default sync-j="16" />
 
@@ -25,6 +26,8 @@
   <project name="multiplayer-fabric-manuals" path="2-contract/multiplayer-fabric-manuals" remote="v-sekai-fabric" revision="main" />
   <project name="manuals" path="2-contract/manuals" remote="v-sekai" revision="main" />
   <project name="swing-twist-kusudama" path="2-contract/swing-twist-kusudama" remote="v-sekai-fabric" revision="main" />
+  <project name="contract-bus" path="2-contract/bus" remote="v-sekai-fabric" revision="main" />
+  <project name="QCBOR" path="2-contract/bus/libs/qcbor" remote="laurencelundblade" revision="refs/tags/v1.6.1" />
   <project name="interactor-kimodo-text-to-motion" path="3-interactor/kimodo-text-to-motion" remote="weftspun" revision="main" />
   <project name="interactor-skintokens-auto-rig" path="3-interactor/skintokens-auto-rig" remote="weftspun" revision="main" />
   <project name="interactor-seethrough-torch" path="3-interactor/seethrough-torch" remote="weftspun" revision="main" />
