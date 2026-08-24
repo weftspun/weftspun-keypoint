@@ -12,11 +12,11 @@ THE SHAPE, AS BLOCK NODES AT THE TOP LEVEL OF THE AST:
 
     heading         0, or 2 and up      never exactly one
     heading         never two in a row  every heading introduces content
-    paragraph       1 and up            each at most 70 words
+    paragraph       1 and up            each at most 35 words
     table           any number          any size, uncounted
     list            any number          any size, uncounted
     fenced diagram  any number          any size, uncounted
-    all prose       at most 144 words   headings and paragraphs together
+    all prose       at most 72 words    headings and paragraphs together
     anything else   rejected
 
 WHY THIS SHAPE AND NOT ANOTHER. It is not taste. Pernice (2019) [1] names two patterns a
@@ -52,13 +52,19 @@ section, and only topics in the section", which an empty section cannot satisfy.
 also the cheapest way a document fakes structure: stack the headings, and it looks scannable
 in outline and delivers nothing when scanned.
 
-PARAGRAPHS ARE BOUNDED INDIVIDUALLY, NOT ONLY IN TOTAL. A single 144-word block is exactly
+PARAGRAPHS ARE BOUNDED INDIVIDUALLY, NOT ONLY IN TOTAL. A single 72-word block is exactly
 the "little text that stands out" case. Guidance for scannable prose puts a paragraph at two
-to four sentences; the gate bounds words instead, at 70, because words are countable exactly
+to four sentences; the gate bounds words instead, at 35, because words are countable exactly
 and sentences are not - splitting on full stops mistakes every abbreviation for a sentence
-end, which is the convenient proxy rather than the quantity. 70 words is roughly four
+end, which is the convenient proxy rather than the quantity. 35 words is roughly two
 sentences of ordinary technical prose, and the conversion is stated here rather than buried
 in a constant, so that a reader can disagree with it.
+
+THE TWO BOUNDS HAVE TO STAY APART TO BOTH MEAN SOMETHING. Halving the total without halving
+the paragraph would have left the per-paragraph rule binding only in the two-word window
+between 70 and 72 - a rule that has stopped doing anything while still appearing in the
+output as though it had. The ratio is what carries the design: roughly two paragraphs to the
+budget, so each bound still catches a shape the other cannot.
 
 STRUCTURE IS NEVER MEASURED FOR SIZE. A table is scanned by column, a list by item, a diagram
 by following an arrow, and a reader takes what they need and stops. An earlier version
@@ -104,8 +110,8 @@ try:
 except ImportError:  # reported as a FAIL by main(), never as a clean run
     MarkdownIt = None
 
-MAX_PROSE_WORDS = 144      # headings and paragraphs together
-MAX_PARAGRAPH_WORDS = 70   # about four sentences; see the docstring for the conversion
+MAX_PROSE_WORDS = 72       # headings and paragraphs together
+MAX_PARAGRAPH_WORDS = 35   # about two sentences; see the docstring for the conversion
 # Tables and lists carry the entries; a fence carries a diagram. Anything absent from these
 # two sets is rejected by omission, so a block type nobody anticipated fails loudly rather
 # than passing quietly.
@@ -219,21 +225,34 @@ def self_test():
         ("a 60-row table, a 60-item list and an 800-line diagram cost nothing",
          big_structure),
     ]
+    # Paragraphs at exactly the per-paragraph bound, and enough of them to break the total.
+    # Both numbers are DERIVED rather than typed: a literal that is legal under one pair of
+    # bounds trips a different rule under another, and the loop below would still print ok.
+    # That is the hole the expected-rule column below closes.
+    legal = MAX_PARAGRAPH_WORDS
+    enough = MAX_PROSE_WORDS // legal + 1
+
+    # Third field: the rule each body must fail ON. A negative control rejected for some
+    # other reason has not tested what it names, and reads identically in the output.
     negatives = [
-        ("exactly one heading, which restates the title", "## Only one\n\n" + para),
+        ("exactly one heading, which restates the title", "## Only one\n\n" + para,
+         "headings"),
         ("two headings in a row, the first naming an empty section",
-         "## First\n\n## Second\n\n" + para),
-        ("no paragraph anywhere", "## First\n\n- only a list\n\n## Second\n\n- another\n"),
+         "## First\n\n## Second\n\n" + para, "heading order"),
+        ("no paragraph anywhere",
+         "## First\n\n- only a list\n\n## Second\n\n- another\n", "paragraphs"),
         ("one paragraph of %d words" % (MAX_PARAGRAPH_WORDS + 1),
-         " ".join("w%d" % i for i in range(MAX_PARAGRAPH_WORDS + 1)) + "\n"),
-        # Three paragraphs each inside the per-paragraph bound but over the total. The
-        # per-paragraph rule cannot catch this and the total cannot catch a single long
+         " ".join("w%d" % i for i in range(MAX_PARAGRAPH_WORDS + 1)) + "\n",
+         "paragraph size"),
+        # The per-paragraph rule cannot catch this and the total cannot catch a single long
         # paragraph, so the two bounds each need their own control.
-        ("three legal paragraphs totalling over %d words" % MAX_PROSE_WORDS,
-         "\n\n".join(" ".join("w%d" % i for i in range(60)) for _ in range(3)) + "\n"),
-        ("a blockquote", headless + "\n> quoted prose\n"),
-        ("a horizontal rule", headless + "\n---\n"),
-        ("a raw HTML block", headless + "\n<div>raw</div>\n"),
+        ("%d legal paragraphs totalling over %d words" % (enough, MAX_PROSE_WORDS),
+         "\n\n".join(" ".join("w%d" % i for i in range(legal))
+                     for _ in range(enough)) + "\n",
+         "prose words"),
+        ("a blockquote", headless + "\n> quoted prose\n", "block types"),
+        ("a horizontal rule", headless + "\n---\n", "block types"),
+        ("a raw HTML block", headless + "\n<div>raw</div>\n", "block types"),
     ]
 
     for name, body in positives:
@@ -247,13 +266,20 @@ def self_test():
             return 1
 
     bad = 0
-    for name, body in negatives:
-        caught = bool(check(body, verbose=False)[0])
-        print("  %-4s negative control: %s is rejected" % ("ok" if caught else "FAIL", name))
+    for name, body, rule in negatives:
+        fired = [n for n, _ in check(body, verbose=False)[0]]
+        # EXACTLY the named rule, not merely including it. A body that trips three rules
+        # proves nothing about any one of them, and "rule in fired" would call that ok -
+        # which is how a control keeps reading green after the thing it isolates has moved.
+        caught = fired == [rule]
+        print("  %-4s negative control: %s is rejected on %s"
+              % ("ok" if caught else "FAIL", name, rule))
         if not caught:
             bad += 1
+            print("       fired instead: %s" % (", ".join(fired) or "nothing"))
     if bad:
-        print("       %d shape(s) the gate claims to reject and does not." % bad)
+        print("       %d shape(s) the gate claims to reject on a named rule and does not."
+              % bad)
         return 1
     print("  %d of %d rejected." % (len(negatives), len(negatives)))
     return 0
