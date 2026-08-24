@@ -52,7 +52,7 @@
   <project name="interactor-mujoco-mjx" path="3-interactor/mujoco-mjx" remote="weftspun" revision="main" />
   <project name="interactor-anny" path="3-interactor/anny" remote="weftspun" revision="main" />
   <project name="interactor-soma-x" path="3-interactor/soma-x" remote="weftspun" revision="main" />
-  <project name="nx_shuttle" path="3-interactor/nx-shuttle" remote="weftspun" revision="hailo10h-operators" />
+  <project name="nx_shuttle" path="3-interactor/nx-shuttle" remote="weftspun" revision="main" />
   <project name="bumblebee" path="3-interactor/bumblebee" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
