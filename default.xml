@@ -38,6 +38,9 @@
   <project name="interactor-seethrough-tinygrad" path="3-interactor/seethrough-tinygrad" remote="weftspun" revision="main" />
   <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
   <project name="interactor-pose-consensus" path="3-interactor/pose-consensus" remote="weftspun" revision="main" />
+  <project name="interactor-omnigen2" path="3-interactor/omnigen2" remote="weftspun" revision="main" />
+  <project name="interactor-editscore" path="3-interactor/editscore" remote="weftspun" revision="main" />
+  <project name="tropes-removal-model" path="3-interactor/tropes-removal-model" remote="weftspun" revision="main" />
   <project name="solve" path="3-interactor/sinew-solve" remote="sinew-mocap" revision="main" />
   <project name="mount-drift" path="3-interactor/sinew-mount-drift" remote="sinew-mocap" revision="main" />
   <project name="interactor-physics" path="3-interactor/physics" remote="v-sekai-fabric" revision="main" />
@@ -48,6 +51,7 @@
   <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="interactor-pixal3d-image-to-textured-mesh" path="3-interactor/pixal3d-image-to-textured-mesh" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
+  <project name="interactor-pixal3d-image-mesh-painting" path="3-interactor/pixal3d-image-mesh-painting" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="interactor-qwen35-defiant" path="3-interactor/qwen35-defiant" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="residual-fsq-recommender" path="3-interactor/residual-fsq-recommender" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="trellis2-ex" path="3-interactor/trellis2-ex" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
@@ -73,7 +77,6 @@
   </project>
   <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main" />
   <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
-  <project name="tropes-removal-model" path="2-contract/tropes_removal_model" remote="weftspun" revision="main" />
   <project name="tensor-copy-cost-model" path="2-contract/tensor-copy-cost-model" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="trellis2-mesh-vae-slang" path="2-contract/trellis2-mesh-vae-slang" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="weftspun-character-taxonomy" path="2-contract/weftspun-character-taxonomy" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
