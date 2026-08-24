@@ -31,6 +31,10 @@
   <project name="interactor-kimodo-text-to-motion" path="3-interactor/kimodo-text-to-motion" remote="weftspun" revision="main" />
   <project name="interactor-skintokens-auto-rig" path="3-interactor/skintokens-auto-rig" remote="weftspun" revision="main" />
   <project name="interactor-seethrough-torch" path="3-interactor/seethrough-torch" remote="weftspun" revision="main" />
+  <project name="interactor-seethrough-layerdiff" path="3-interactor/seethrough-layerdiff" remote="weftspun" revision="main" />
+  <project name="interactor-seethrough-marigold-depth" path="3-interactor/seethrough-marigold-depth" remote="weftspun" revision="main" />
+  <project name="interactor-seethrough-vae" path="3-interactor/seethrough-vae" remote="weftspun" revision="main" />
+  <project name="interactor-seethrough-partseg" path="3-interactor/seethrough-partseg" remote="weftspun" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-main" remote="v-sekai-fabric" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-cineform" remote="v-sekai-fabric" revision="cineform-movie-writer" />
   <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
