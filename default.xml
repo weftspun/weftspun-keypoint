@@ -36,6 +36,7 @@
   <project name="interactor-seethrough-partseg" path="3-interactor/seethrough-partseg" remote="weftspun" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-main" remote="v-sekai-fabric" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-cineform" remote="v-sekai-fabric" revision="cineform-movie-writer" />
+  <project name="entities-godot" path="3-interactor/entities-godot-v0.1.0-dev.1" remote="v-sekai-fabric" revision="refs/tags/keypoints/v0.1.0-dev.1" />
   <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
   <project name="cyclegan-style-transfer" path="3-interactor/cyclegan-style-transfer" remote="weftspun" revision="main" />
   <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
