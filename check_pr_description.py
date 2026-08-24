@@ -219,19 +219,35 @@ def self_test():
         + "\n```mermaid\ngraph LR\n"
         + "\n".join("N%d-->N%d" % (i, i + 1) for i in range(400)) + "\n```\n")
 
+    def prose_of(total):
+        """A heading-free body of exactly `total` prose words, in legal-sized paragraphs.
+
+        Exactly, because the total rule is the one bound whose edge nothing else pins. The
+        per-paragraph edge is already pinned from both sides: its negative is MAX + 1 words
+        and the total's negative below contains paragraphs of exactly MAX, which the
+        equality check requires NOT to trip paragraph size.
+        """
+        n, out = 0, []
+        while n < total:
+            take = min(MAX_PARAGRAPH_WORDS, total - n)
+            out.append(" ".join("w%d" % i for i in range(n, n + take)))
+            n += take
+        return "\n\n".join(out) + "\n"
+
     positives = [
         ("two headings, short paragraphs, table, list and diagram", layered),
         ("no headings at all, which is still a legal shape", headless),
         ("a 60-row table, a 60-item list and an 800-line diagram cost nothing",
          big_structure),
+        # The budget is a ceiling that INCLUDES its own value. Without this, `<=` turning
+        # into `<` rejects every body at exactly the limit and no control says a word.
+        ("a body of exactly %d prose words, which is legal" % MAX_PROSE_WORDS,
+         prose_of(MAX_PROSE_WORDS)),
     ]
     # Paragraphs at exactly the per-paragraph bound, and enough of them to break the total.
     # Both numbers are DERIVED rather than typed: a literal that is legal under one pair of
     # bounds trips a different rule under another, and the loop below would still print ok.
     # That is the hole the expected-rule column below closes.
-    legal = MAX_PARAGRAPH_WORDS
-    enough = MAX_PROSE_WORDS // legal + 1
-
     # Third field: the rule each body must fail ON. A negative control rejected for some
     # other reason has not tested what it names, and reads identically in the output.
     negatives = [
@@ -244,12 +260,14 @@ def self_test():
         ("one paragraph of %d words" % (MAX_PARAGRAPH_WORDS + 1),
          " ".join("w%d" % i for i in range(MAX_PARAGRAPH_WORDS + 1)) + "\n",
          "paragraph size"),
-        # The per-paragraph rule cannot catch this and the total cannot catch a single long
-        # paragraph, so the two bounds each need their own control.
-        ("%d legal paragraphs totalling over %d words" % (enough, MAX_PROSE_WORDS),
-         "\n\n".join(" ".join("w%d" % i for i in range(legal))
-                     for _ in range(enough)) + "\n",
-         "prose words"),
+        # ONE word over, not comfortably over. The earlier version of this control totalled
+        # about 105 against a budget of 72, so raising or lowering the budget by one left it
+        # rejecting just the same - it proved the rule existed and said nothing about where
+        # it sits. Paired with the positive above, these two bodies differ by a single word
+        # and straddle the edge. The per-paragraph rule cannot catch this body and the total
+        # cannot catch a single long paragraph, so the two bounds each keep their own control.
+        ("a body of %d prose words, one over the budget" % (MAX_PROSE_WORDS + 1),
+         prose_of(MAX_PROSE_WORDS + 1), "prose words"),
         ("a blockquote", headless + "\n> quoted prose\n", "block types"),
         ("a horizontal rule", headless + "\n---\n", "block types"),
         ("a raw HTML block", headless + "\n<div>raw</div>\n", "block types"),
