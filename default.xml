@@ -25,6 +25,7 @@
   <project name="usd-viewer" path="1-transport/usd-viewer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="weftspun-usd-viewer" path="1-transport/weftspun-usd-viewer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
+  <project name="anny-keypoint-anchors" path="2-contract/anny-keypoint-anchors" remote="weftspun" revision="main" />
   <project name="multiplayer-fabric-manuals" path="2-contract/multiplayer-fabric-manuals" remote="v-sekai-fabric" revision="main" />
   <project name="manuals" path="2-contract/manuals" remote="v-sekai" revision="main" />
   <project name="manuals" path="2-contract/fire-manuals" remote="fire" revision="main" />
@@ -77,7 +78,7 @@
   <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
   <project name="elixir-holographic-reduced-representation" path="4-entities/elixir-holographic-reduced-representation" remote="weftspun" revision="main" />
   <project name="entities-humanoid-rom" path="4-entities/humanoid-rom" remote="v-sekai-fabric" revision="main" />
-  <project name="logbook" path="2-contract/logbook" remote="weftspun" revision="main">
+  <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
     <linkfile src="rfd107a-plan.usda" dest="rfd107a-plan.usda" />
@@ -87,7 +88,6 @@
     <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
     <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
   </project>
-  <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main" />
   <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
   <project name="lean-hinge-exact" path="2-contract/lean-hinge-exact" remote="weftspun" revision="main" />
   <project name="tensor-copy-cost-model" path="2-contract/tensor-copy-cost-model" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
