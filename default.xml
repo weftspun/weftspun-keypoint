@@ -78,6 +78,8 @@
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
     <linkfile src="rfd107a-plan.usda" dest="rfd107a-plan.usda" />
+    <linkfile src="fourloops-plan.usda" dest="fourloops-plan.usda" />
+    <linkfile src="fourloops-etnf.html" dest="fourloops-etnf.html" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
     <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
     <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
