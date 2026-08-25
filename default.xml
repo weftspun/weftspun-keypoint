@@ -109,5 +109,6 @@
   <project name="homebrew-sinew" path="7-service/sinew-homebrew" remote="sinew-mocap" revision="main" />
   <project name="scoop-bucket" path="7-service/sinew-scoop-bucket" remote="sinew-mocap" revision="main" />
   <project name="blender-extensions" path="7-service/sinew-blender-extensions" remote="sinew-mocap" revision="main" />
+  <project name="service-livebook" path="7-service/service-livebook" remote="weftspun" revision="main" />
 
 </manifest>
