@@ -6,6 +6,7 @@
   <remote name="v-sekai-fabric" fetch="https://github.com/v-sekai-fabric" />
   <remote name="v-sekai" fetch="https://github.com/v-sekai" />
   <remote name="laurencelundblade" fetch="https://github.com/laurencelundblade" />
+  <remote name="ftxui" fetch="https://github.com/ArthurSonzogni" />
 
   <default sync-j="16" />
 
@@ -112,5 +113,28 @@
   <project name="scoop-bucket" path="7-service/sinew-scoop-bucket" remote="sinew-mocap" revision="main" />
   <project name="blender-extensions" path="7-service/sinew-blender-extensions" remote="sinew-mocap" revision="main" />
   <project name="service-livebook" path="7-service/service-livebook" remote="weftspun" revision="main" />
+
+  <!-- THE CINEFORM PAIR NEEDS ITS DEPENDENCIES IN THIS MANIFEST, NOT ONLY IN ITS OWN.
+       `service-cineform/default.xml` composes the encoder, the display and the bus, and it
+       is the right root for a deployment-only checkout. It is not reachable from here: a
+       manifest root's own list is not read when the project is checked out as one project
+       among ninety-four, so a `repo sync` of this workspace gives the three programs and
+       none of what they link. Building either one then needs a second, private checkout of
+       contract-bus, which is the drift `wire.hpp` exists to prevent.
+
+       So the same projects are placed here, once, under the service that owns the runtime.
+       Both CMakeLists already take cache paths (HARNESS_DIR, INTERACTOR_DIR, FTXUI_DIR), so
+       the two builds point at these rather than copying them. Nothing is a submodule.
+
+       ONE CONTRACT-BUS PIN. `2-contract/bus` is already in this manifest at its own
+       revision, so the cineform builds take that checkout instead of a second copy. -->
+  <project name="iceoryx2" path="7-service/service-cineform/thirdparty/iceoryx2"
+           remote="weftspun" revision="a1909f56e30c16b1492e829313389b9439811323" />
+  <project name="cineform-sdk" path="7-service/service-cineform/thirdparty/cineform-sdk"
+           remote="weftspun" revision="6b66f29b5079bfb708caa53ff4150616c11c5fa4" />
+  <project name="libwebm" path="7-service/service-cineform/thirdparty/libwebm"
+           remote="weftspun" revision="6184f4484a826724b5293837134ab9492261b941" />
+  <project name="FTXUI" path="7-service/service-cineform/thirdparty/ftxui"
+           remote="ftxui" revision="182ef70cd4dc1109d06e66361a9da86445928578" />
 
 </manifest>
