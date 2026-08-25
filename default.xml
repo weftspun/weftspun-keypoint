@@ -80,7 +80,6 @@
     <linkfile src="rfd107a-plan.usda" dest="rfd107a-plan.usda" />
     <linkfile src="fourloops-plan.usda" dest="fourloops-plan.usda" />
     <linkfile src="fourloops-etnf.usda" dest="fourloops-etnf.usda" />
-    <linkfile src="fourloops.md" dest="fourloops.md" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
     <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
     <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
