@@ -81,9 +81,6 @@
   <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
-    <linkfile src="rfd1122-plan.usda" dest="rfd1122-plan.usda" />
-    <linkfile src="fourloops-plan.usda" dest="fourloops-plan.usda" />
-    <linkfile src="fourloops-etnf.usda" dest="fourloops-etnf.usda" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
     <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
     <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
