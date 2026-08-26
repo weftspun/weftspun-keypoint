@@ -89,6 +89,7 @@
   <project name="trellis2-mesh-vae-slang" path="2-contract/trellis2-mesh-vae-slang" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="weftspun-character-taxonomy" path="2-contract/weftspun-character-taxonomy" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name=".github" path=".github" remote="weftspun" revision="main" />
+  <project name="dot-claude" path=".claude" remote="weftspun" revision="main" />
   <project name="repository-side" path="5-repository/side" remote="weftspun" revision="main" />
   <project name="hailo_model_zoo" path="5-repository/hailo-model-zoo" remote="weftspun" revision="refs/tags/keypoint/v0.1.0-dev.1" />
   <project name="anny-render-corpus" path="6-datasource/anny-render-corpus" remote="weftspun" revision="main" />
