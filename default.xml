@@ -26,9 +26,9 @@
   <project name="weftspun-usd-viewer" path="1-transport/weftspun-usd-viewer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
   <project name="anny-keypoint-anchors" path="2-contract/anny-keypoint-anchors" remote="weftspun" revision="main" />
-  <project name="multiplayer-fabric-manuals" path="2-contract/multiplayer-fabric-manuals" remote="v-sekai-fabric" revision="main" />
-  <project name="manuals" path="2-contract/vsk-manuals" remote="v-sekai" revision="main" />
-  <project name="manuals" path="2-contract/fire-manuals" remote="fire" revision="main" />
+  <project name="multiplayer-fabric-manuals" path="2-contract/manuals-multiplayer-fabric" remote="v-sekai-fabric" revision="main" />
+  <project name="manuals" path="2-contract/manuals-vsk" remote="v-sekai" revision="main" />
+  <project name="manuals" path="2-contract/manuals-fire" remote="fire" revision="main" />
   <project name="swing-twist-kusudama" path="2-contract/swing-twist-kusudama" remote="v-sekai-fabric" revision="main" />
   <project name="contract-bus" path="2-contract/bus" remote="v-sekai-fabric" revision="main" />
   <project name="QCBOR" path="2-contract/bus/libs/qcbor" remote="laurencelundblade" revision="refs/tags/v1.6.1" />
@@ -78,7 +78,7 @@
   <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
   <project name="elixir-holographic-reduced-representation" path="4-entities/elixir-holographic-reduced-representation" remote="weftspun" revision="main" />
   <project name="entities-humanoid-rom" path="4-entities/humanoid-rom" remote="v-sekai-fabric" revision="main" />
-  <project name="request-for-discussion" path="2-contract/weftspun-manuals" remote="weftspun" revision="main">
+  <project name="request-for-discussion" path="2-contract/manuals-weftspun" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
   </project>
