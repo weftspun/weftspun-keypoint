@@ -82,8 +82,6 @@
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CLAUDE.md" dest="AGENTS.md" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
-    <linkfile src="LICENSE-APACHE" dest="LICENSE-APACHE" />
-    <linkfile src="LICENSE-MIT" dest="LICENSE-MIT" />
   </project>
   <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
   <project name="lean-hinge-exact" path="2-contract/lean-hinge-exact" remote="weftspun" revision="main" />
