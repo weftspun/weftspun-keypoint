@@ -114,6 +114,7 @@
   <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
+  <project name="chibifire/anny-render-corpus" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-generated" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
