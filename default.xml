@@ -79,8 +79,7 @@
   <project name="elixir-holographic-reduced-representation" path="4-entities/elixir-holographic-reduced-representation" remote="weftspun" revision="main" />
   <project name="entities-humanoid-rom" path="4-entities/humanoid-rom" remote="v-sekai-fabric" revision="main" />
   <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main">
-    <linkfile src="CLAUDE.md" dest=".claude/CLAUDE.md" />
-    <linkfile src="CLAUDE.md" dest=".claude/AGENTS.md" />
+    <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
   </project>
   <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
