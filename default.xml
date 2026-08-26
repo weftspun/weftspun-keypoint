@@ -8,6 +8,8 @@
   <remote name="fire" fetch="https://github.com/fire" />
   <remote name="laurencelundblade" fetch="https://github.com/laurencelundblade" />
   <remote name="ftxui" fetch="https://github.com/ArthurSonzogni" />
+  <remote name="huggingface" fetch="https://huggingface.co" />
+  <remote name="huggingface-datasets" fetch="https://huggingface.co/datasets" />
 
   <default sync-j="16" />
 
@@ -98,6 +100,8 @@
   <project name="dot-claude" path=".claude" remote="weftspun" revision="main" />
   <project name="repository-side" path="5-repository/side" remote="weftspun" revision="main" />
   <project name="hailo_model_zoo" path="5-repository/hailo-model-zoo" remote="weftspun" revision="refs/tags/keypoint/v0.1.0-dev.1" />
+  <project name="chibifire/anny-camera-lora" path="5-repository/anny-camera-lora" remote="huggingface" revision="main" />
+  <project name="chibifire/omnigen2-base-df5dca8a" path="5-repository/omnigen2-base-df5dca8a" remote="huggingface" revision="main" />
   <project name="anny-render-corpus" path="6-datasource/anny-render-corpus" remote="weftspun" revision="main" />
   <project name="versitygw-local" path="6-datasource/versitygw-local" remote="weftspun" revision="main" />
   <project name="rf-detr-detection-data" path="6-datasource/rf-detr-detection-data" remote="weftspun" revision="main" />
@@ -110,6 +114,7 @@
   <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
+  <project name="chibifire/anny-render-corpus-generated" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="packaging" path="7-service/sinew-packaging" remote="sinew-mocap" revision="main" />
