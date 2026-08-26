@@ -72,7 +72,7 @@
   <project name="ggml" path="3-interactor/trellis2cpp/ggml" remote="weftspun" revision="331b9cba52b23d895bc4ad218c007eb5e667540f" />
   <project name="ufbx-to-openusd" path="3-interactor/ufbx-to-openusd" remote="weftspun" revision="main" />
   <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="main" />
-  <project name="interactor-voxhammer-image-mesh-editing" path="3-interactor/voxhammer-image-mesh-editing" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.2" />
+  <project name="interactor-voxhammer-image-mesh-editing" path="3-interactor/voxhammer-image-mesh-editing" remote="weftspun" revision="main" />
   <project name="VoxHammer" path="3-interactor/voxhammer-upstream" remote="weftspun" revision="f33cd965388faf4bd89252068cac5a0b8030e7de" />
   <project name="Pixal3D" path="3-interactor/pixal3d-upstream" remote="weftspun" revision="cdbb2bbffbf4e6f298b5f2af3d1d76a8d823d2af" />
   <project name="MoGe" path="3-interactor/moge-upstream" remote="weftspun" revision="74fbce054ebed49800de42d0ad0e83495065719a" />
