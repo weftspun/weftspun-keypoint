@@ -74,6 +74,9 @@
   <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="main" />
   <project name="interactor-voxhammer-image-mesh-editing" path="3-interactor/voxhammer-image-mesh-editing" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.2" />
   <project name="VoxHammer" path="3-interactor/voxhammer-upstream" remote="weftspun" revision="f33cd965388faf4bd89252068cac5a0b8030e7de" />
+  <project name="Pixal3D" path="3-interactor/pixal3d-upstream" remote="weftspun" revision="cdbb2bbffbf4e6f298b5f2af3d1d76a8d823d2af" />
+  <project name="MoGe" path="3-interactor/moge-upstream" remote="weftspun" revision="74fbce054ebed49800de42d0ad0e83495065719a" />
+  <project name="TRELLIS.2" path="3-interactor/trellis2-upstream" remote="weftspun" revision="75fbf0183001ed9876c8dbb35de6b68552ee08bd" />
   <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="main" />
   <project name="godot-soma-twist" path="4-entities/godot-soma-twist" remote="weftspun" revision="main" />
   <project name="anny-pose-retarget-work" path="4-entities/anny-pose-retarget-work" remote="weftspun" revision="main" />
