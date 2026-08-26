@@ -73,6 +73,7 @@
   <project name="ufbx-to-openusd" path="3-interactor/ufbx-to-openusd" remote="weftspun" revision="main" />
   <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="main" />
   <project name="interactor-voxhammer-image-mesh-editing" path="3-interactor/voxhammer-image-mesh-editing" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.2" />
+  <project name="VoxHammer" path="3-interactor/voxhammer-upstream" remote="weftspun" revision="f33cd965388faf4bd89252068cac5a0b8030e7de" />
   <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="main" />
   <project name="godot-soma-twist" path="4-entities/godot-soma-twist" remote="weftspun" revision="main" />
   <project name="anny-pose-retarget-work" path="4-entities/anny-pose-retarget-work" remote="weftspun" revision="main" />
