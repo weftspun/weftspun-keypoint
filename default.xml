@@ -16,7 +16,7 @@
   <project name="rf-detr-mcp" path="1-transport/rf-detr-mcp" remote="weftspun" revision="main" />
   <project name="runpod-chat-tui" path="1-transport/runpod-chat-tui" remote="weftspun" revision="main" />
   <project name="transport-cineform-tui" path="1-transport/transport-cineform-tui" remote="weftspun" revision="main" />
-  <project name="ex_mcp" path="1-transport/ex_mcp" remote="weftspun" revision="main" />
+  <project name="ex_mcp" path="1-transport/ex-mcp" remote="weftspun" revision="main" />
   <project name="driver" path="1-transport/sinew-driver" remote="sinew-mocap" revision="main" />
   <project name="vr-bridge" path="1-transport/sinew-vr-bridge" remote="sinew-mocap" revision="main" />
   <project name="viewer" path="1-transport/sinew-viewer" remote="sinew-mocap" revision="main" />
@@ -78,7 +78,7 @@
   <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
   <project name="elixir-holographic-reduced-representation" path="4-entities/elixir-holographic-reduced-representation" remote="weftspun" revision="main" />
   <project name="entities-humanoid-rom" path="4-entities/humanoid-rom" remote="v-sekai-fabric" revision="main" />
-  <project name="request-for-discussion" path="2-contract/request_for_discussion" remote="weftspun" revision="main">
+  <project name="request-for-discussion" path="2-contract/weftspun-manuals" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
   </project>
