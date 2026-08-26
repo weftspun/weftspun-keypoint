@@ -27,7 +27,7 @@
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
   <project name="anny-keypoint-anchors" path="2-contract/anny-keypoint-anchors" remote="weftspun" revision="main" />
   <project name="multiplayer-fabric-manuals" path="2-contract/multiplayer-fabric-manuals" remote="v-sekai-fabric" revision="main" />
-  <project name="manuals" path="2-contract/manuals" remote="v-sekai" revision="main" />
+  <project name="manuals" path="2-contract/vsk-manuals" remote="v-sekai" revision="main" />
   <project name="manuals" path="2-contract/fire-manuals" remote="fire" revision="main" />
   <project name="swing-twist-kusudama" path="2-contract/swing-twist-kusudama" remote="v-sekai-fabric" revision="main" />
   <project name="contract-bus" path="2-contract/bus" remote="v-sekai-fabric" revision="main" />
