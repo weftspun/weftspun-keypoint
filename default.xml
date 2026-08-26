@@ -77,7 +77,8 @@
   <project name="Pixal3D" path="3-interactor/pixal3d-upstream" remote="weftspun" revision="cdbb2bbffbf4e6f298b5f2af3d1d76a8d823d2af" />
   <project name="MoGe" path="3-interactor/moge-upstream" remote="weftspun" revision="74fbce054ebed49800de42d0ad0e83495065719a" />
   <project name="TRELLIS.2" path="3-interactor/trellis2-upstream" remote="weftspun" revision="75fbf0183001ed9876c8dbb35de6b68552ee08bd" />
-  <project name="onnxruntime-mlx" path="3-interactor/onnxruntime-mlx" remote="weftspun" revision="0230db7432666388ce87d26bc72c6df9ff628225" />
+  <project name="LiteRT" path="3-interactor/litert-upstream" remote="weftspun" revision="bad370ead7a58f7f7f35ebf291b2b02ba24409f0" />
+  <project name="litert-torch" path="3-interactor/litert-torch-upstream" remote="weftspun" revision="95ccef1b0f20d77495783a2695ca2b3bc64b4ac5" />
   <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="main" />
   <project name="godot-soma-twist" path="4-entities/godot-soma-twist" remote="weftspun" revision="main" />
   <project name="anny-pose-retarget-work" path="4-entities/anny-pose-retarget-work" remote="weftspun" revision="main" />
