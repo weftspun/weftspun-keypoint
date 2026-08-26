@@ -21,9 +21,9 @@
   <project name="vr-bridge" path="1-transport/sinew-vr-bridge" remote="sinew-mocap" revision="main" />
   <project name="viewer" path="1-transport/sinew-viewer" remote="sinew-mocap" revision="main" />
   <project name="osc-tester" path="1-transport/sinew-osc-tester" remote="sinew-mocap" revision="main" />
-  <project name="billboard-labels" path="1-transport/billboard-labels" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="usd-viewer" path="1-transport/usd-viewer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="weftspun-usd-viewer" path="1-transport/weftspun-usd-viewer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
+  <project name="billboard-labels" path="1-transport/billboard-labels" remote="weftspun" revision="main" />
+  <project name="usd-viewer" path="1-transport/usd-viewer" remote="weftspun" revision="main" />
+  <project name="weftspun-usd-viewer" path="1-transport/weftspun-usd-viewer" remote="weftspun" revision="main" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
   <project name="anny-keypoint-anchors" path="2-contract/anny-keypoint-anchors" remote="weftspun" revision="main" />
   <project name="multiplayer-fabric-manuals" path="2-contract/manuals-multiplayer-fabric" remote="v-sekai-fabric" revision="main" />
@@ -57,24 +57,23 @@
   <project name="interactor-anny" path="3-interactor/anny" remote="weftspun" revision="main" />
   <project name="interactor-soma-x" path="3-interactor/soma-x" remote="weftspun" revision="main" />
   <project name="nx_shuttle" path="3-interactor/nx-shuttle" remote="weftspun" revision="main" />
-  <project name="bumblebee" path="3-interactor/bumblebee" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-pixal3d-image-to-textured-mesh" path="3-interactor/pixal3d-image-to-textured-mesh" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-pixal3d-image-mesh-painting" path="3-interactor/pixal3d-image-mesh-painting" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-qwen35-defiant" path="3-interactor/qwen35-defiant" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="residual-fsq-recommender" path="3-interactor/residual-fsq-recommender" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="trellis2-ex" path="3-interactor/trellis2-ex" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-trellis2-image-mesh-painting" path="3-interactor/trellis2-image-mesh-painting" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="interactor-trellis2-image-to-textured-mesh" path="3-interactor/trellis2-image-to-textured-mesh" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="trellis2cpp" path="3-interactor/trellis2cpp" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="trellis2cpp" path="3-interactor/trellis2cpp-voxhammer" remote="weftspun" revision="main" />
-  <project name="ggml" path="3-interactor/trellis2cpp-voxhammer/ggml" remote="weftspun" revision="331b9cba52b23d895bc4ad218c007eb5e667540f" />
-  <project name="ufbx-to-openusd" path="3-interactor/ufbx-to-openusd" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
+  <project name="bumblebee" path="3-interactor/bumblebee" remote="weftspun" revision="main" />
+  <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="main" />
+  <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="main" />
+  <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="main" />
+  <project name="interactor-pixal3d-image-to-textured-mesh" path="3-interactor/pixal3d-image-to-textured-mesh" remote="weftspun" revision="main" />
+  <project name="interactor-pixal3d-image-mesh-painting" path="3-interactor/pixal3d-image-mesh-painting" remote="weftspun" revision="main" />
+  <project name="interactor-qwen35-defiant" path="3-interactor/qwen35-defiant" remote="weftspun" revision="main" />
+  <project name="residual-fsq-recommender" path="3-interactor/residual-fsq-recommender" remote="weftspun" revision="main" />
+  <project name="trellis2-ex" path="3-interactor/trellis2-ex" remote="weftspun" revision="main" />
+  <project name="interactor-trellis2-image-mesh-painting" path="3-interactor/trellis2-image-mesh-painting" remote="weftspun" revision="main" />
+  <project name="interactor-trellis2-image-to-textured-mesh" path="3-interactor/trellis2-image-to-textured-mesh" remote="weftspun" revision="main" />
+  <project name="trellis2cpp" path="3-interactor/trellis2cpp" remote="weftspun" revision="main" />
+  <project name="ggml" path="3-interactor/trellis2cpp/ggml" remote="weftspun" revision="331b9cba52b23d895bc4ad218c007eb5e667540f" />
+  <project name="ufbx-to-openusd" path="3-interactor/ufbx-to-openusd" remote="weftspun" revision="main" />
+  <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="main" />
   <project name="interactor-voxhammer-image-mesh-editing" path="3-interactor/voxhammer-image-mesh-editing" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.2" />
-  <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
+  <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="main" />
   <project name="godot-soma-twist" path="4-entities/godot-soma-twist" remote="weftspun" revision="main" />
   <project name="anny-pose-retarget-work" path="4-entities/anny-pose-retarget-work" remote="weftspun" revision="main" />
   <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
@@ -86,9 +85,9 @@
   </project>
   <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
   <project name="lean-hinge-exact" path="2-contract/lean-hinge-exact" remote="weftspun" revision="main" />
-  <project name="tensor-copy-cost-model" path="2-contract/tensor-copy-cost-model" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="trellis2-mesh-vae-slang" path="2-contract/trellis2-mesh-vae-slang" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
-  <project name="weftspun-character-taxonomy" path="2-contract/weftspun-character-taxonomy" remote="weftspun" revision="refs/tags/mesh-latents/v0.1.0-dev.1" />
+  <project name="tensor-copy-cost-model" path="2-contract/tensor-copy-cost-model" remote="weftspun" revision="main" />
+  <project name="trellis2-mesh-vae-slang" path="2-contract/trellis2-mesh-vae-slang" remote="weftspun" revision="main" />
+  <project name="weftspun-character-taxonomy" path="2-contract/weftspun-character-taxonomy" remote="weftspun" revision="main" />
   <project name=".github" path=".github" remote="weftspun" revision="main" />
   <project name="dot-claude" path=".claude" remote="weftspun" revision="main" />
   <project name="repository-side" path="5-repository/side" remote="weftspun" revision="main" />
