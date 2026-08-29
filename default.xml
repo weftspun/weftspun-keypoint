@@ -43,9 +43,7 @@
   <project name="entities-godot" path="3-interactor/entities-godot-sandbox" remote="v-sekai-fabric" revision="feat/vsk-sandbox-4.7" />
   <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
   <project name="cyclegan-style-transfer" path="3-interactor/cyclegan-style-transfer" remote="weftspun" revision="main" />
-  <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main">
-    <linkfile src="scripts/gate_onnx_device.py" dest="hailo_device_ops.py" />
-  </project>
+  <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
   <project name="interactor-pose-consensus" path="3-interactor/pose-consensus" remote="weftspun" revision="main" />
   <project name="interactor-omnigen2" path="3-interactor/omnigen2" remote="weftspun" revision="main" />
   <project name="interactor-editscore" path="3-interactor/editscore" remote="weftspun" revision="main" />
@@ -93,6 +91,14 @@
   <project name="request-for-discussion" path="2-contract/manuals-weftspun" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-plan.usda" dest="2-contract/manuals-weftspun/fourloops-plan.usda" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-plan.usda" dest="2-contract/manuals-weftspun/rfd/1144-image-to-omnigen2/fourloops-plan.usda" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-plan.usda" dest="2-contract/manuals-weftspun/rfd/1145-stylized-to-omnigen2/fourloops-plan.usda" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-plan.usda" dest="2-contract/manuals-weftspun/rfd/1146-latent-to-pixal3d/fourloops-plan.usda" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-etnf.usda" dest="2-contract/manuals-weftspun/fourloops-etnf.usda" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-etnf.usda" dest="2-contract/manuals-weftspun/rfd/1144-image-to-omnigen2/fourloops-etnf.usda" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-etnf.usda" dest="2-contract/manuals-weftspun/rfd/1145-stylized-to-omnigen2/fourloops-etnf.usda" />
+    <linkfile src="rfd/1143-keypoints-to-anny/fourloops-etnf.usda" dest="2-contract/manuals-weftspun/rfd/1146-latent-to-pixal3d/fourloops-etnf.usda" />
   </project>
   <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
   <project name="lean-hinge-exact" path="2-contract/lean-hinge-exact" remote="weftspun" revision="main" />
