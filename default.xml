@@ -81,6 +81,7 @@
   <project name="VoxHammer" path="3-interactor/voxhammer-upstream" remote="weftspun" revision="f33cd965388faf4bd89252068cac5a0b8030e7de" />
   <project name="Pixal3D" path="3-interactor/pixal3d-upstream" remote="weftspun" revision="cdbb2bbffbf4e6f298b5f2af3d1d76a8d823d2af" />
   <project name="MoGe" path="3-interactor/moge-upstream" remote="weftspun" revision="74fbce054ebed49800de42d0ad0e83495065719a" />
+  <project name="lingbot-map" path="3-interactor/lingbot-map-upstream" remote="weftspun" revision="1740f18ead3cca8e0e07dd0ec6b7030d22f0894c" />
   <project name="TRELLIS.2" path="3-interactor/trellis2-upstream" remote="weftspun" revision="75fbf0183001ed9876c8dbb35de6b68552ee08bd" />
   <project name="LiteRT" path="3-interactor/litert-upstream" remote="weftspun" revision="bad370ead7a58f7f7f35ebf291b2b02ba24409f0" />
   <project name="litert-torch" path="3-interactor/litert-torch-upstream" remote="weftspun" revision="95ccef1b0f20d77495783a2695ca2b3bc64b4ac5" />
