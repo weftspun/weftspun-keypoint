@@ -93,6 +93,8 @@
   <project name="request-for-discussion" path="2-contract/manuals-weftspun" remote="weftspun" revision="main">
     <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
     <linkfile src="CITATION.cff" dest="CITATION.cff" />
+    <linkfile src="rfd/fourloops-plan.usda" dest="2-contract/manuals-weftspun/fourloops-plan.usda" />
+    <linkfile src="rfd/fourloops-etnf.usda" dest="2-contract/manuals-weftspun/fourloops-etnf.usda" />
   </project>
   <project name="lean-deform-exact" path="2-contract/lean-deform-exact" remote="weftspun" revision="main" />
   <project name="lean-hinge-exact" path="2-contract/lean-hinge-exact" remote="weftspun" revision="main" />
