@@ -28,7 +28,6 @@
   <project name="weftspun-usd-viewer" path="1-transport/weftspun-usd-viewer" remote="weftspun" revision="main" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
   <project name="anny-keypoint-anchors" path="2-contract/anny-keypoint-anchors" remote="weftspun" revision="main" />
-  <project name="multiplayer-fabric-manuals" path="2-contract/manuals-multiplayer-fabric" remote="v-sekai-fabric" revision="main" />
   <project name="manuals" path="2-contract/manuals-vsk" remote="v-sekai" revision="main" />
   <project name="manuals" path="2-contract/manuals-fire" remote="fire" revision="main" />
   <project name="swing-twist-kusudama" path="2-contract/swing-twist-kusudama" remote="v-sekai-fabric" revision="main" />
