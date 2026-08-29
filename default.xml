@@ -125,6 +125,7 @@
   <project name="scoop-bucket" path="7-service/sinew-scoop-bucket" remote="sinew-mocap" revision="main" />
   <project name="blender-extensions" path="7-service/sinew-blender-extensions" remote="sinew-mocap" revision="main" />
   <project name="service-livebook" path="7-service/service-livebook" remote="weftspun" revision="main" />
+  <project name="service-godot-build" path="7-service/service-godot-build" remote="weftspun" revision="main" />
 
   <project name="iceoryx2" path="7-service/service-cineform/thirdparty/iceoryx2"
            remote="weftspun" revision="a1909f56e30c16b1492e829313389b9439811323" />
@@ -136,8 +137,8 @@
            remote="ftxui" revision="182ef70cd4dc1109d06e66361a9da86445928578" />
 
   <project name="godot-sandbox" path="3-interactor/entities-godot-sandbox/modules/sandbox"
-           remote="v-sekai-fabric" revision="255d2345f6b2b725bb3dc6660de5fbf52efcc39c" />
+           remote="v-sekai-fabric" revision="51853e964bba7bb2e0bd621acac3c409954c0d24" />
   <project name="libriscv" path="3-interactor/entities-godot-sandbox/modules/sandbox/thirdparty/libriscv"
-           remote="v-sekai-fabric" revision="b91c82ac9dfa1e719f76aa56afc651ebfaa99adc" />
+           remote="v-sekai-fabric" revision="2b681b996992d91ee7da0d228d0e5935b42bb879" />
 
 </manifest>
