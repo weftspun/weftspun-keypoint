@@ -82,6 +82,7 @@
   <project name="TRELLIS.2" path="3-interactor/trellis2-upstream" remote="weftspun" revision="75fbf0183001ed9876c8dbb35de6b68552ee08bd" />
   <project name="LiteRT" path="3-interactor/litert-upstream" remote="weftspun" revision="bad370ead7a58f7f7f35ebf291b2b02ba24409f0" />
   <project name="litert-torch" path="3-interactor/litert-torch-upstream" remote="weftspun" revision="95ccef1b0f20d77495783a2695ca2b3bc64b4ac5" />
+  <project name="llama-cpp-npu-vision" path="3-interactor/llama-cpp-npu-vision-upstream" remote="weftspun" revision="6a2729032a2b8c978c3b98553e7191478609507a" />
   <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="main" />
   <project name="godot-soma-twist" path="4-entities/godot-soma-twist" remote="weftspun" revision="main" />
   <project name="anny-pose-retarget-work" path="4-entities/anny-pose-retarget-work" remote="weftspun" revision="main" />
