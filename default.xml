@@ -43,6 +43,7 @@
   <project name="entities-godot" path="3-interactor/entities-godot-main" remote="v-sekai-fabric" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-cineform" remote="v-sekai-fabric" revision="cineform-movie-writer" />
   <project name="entities-godot" path="3-interactor/entities-godot-v0.1.0-dev.1" remote="v-sekai-fabric" revision="refs/tags/keypoints/v0.1.0-dev.1" />
+  <project name="entities-godot" path="3-interactor/entities-godot-sandbox" remote="v-sekai-fabric" revision="feat/vsk-sandbox-4.7" />
   <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
   <project name="cyclegan-style-transfer" path="3-interactor/cyclegan-style-transfer" remote="weftspun" revision="main" />
   <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
@@ -132,5 +133,10 @@
            remote="weftspun" revision="6184f4484a826724b5293837134ab9492261b941" />
   <project name="FTXUI" path="7-service/service-cineform/thirdparty/ftxui"
            remote="ftxui" revision="182ef70cd4dc1109d06e66361a9da86445928578" />
+
+  <project name="godot-sandbox" path="3-interactor/entities-godot-sandbox/modules/sandbox"
+           remote="v-sekai-fabric" revision="255d2345f6b2b725bb3dc6660de5fbf52efcc39c" />
+  <project name="libriscv" path="3-interactor/entities-godot-sandbox/modules/sandbox/thirdparty/libriscv"
+           remote="v-sekai-fabric" revision="b91c82ac9dfa1e719f76aa56afc651ebfaa99adc" />
 
 </manifest>
