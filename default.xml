@@ -47,6 +47,8 @@
   <project name="entities-godot" path="3-interactor/entities-godot-sandbox" remote="v-sekai-fabric" revision="feat/vsk-sandbox-4.7" />
   <project name="turboquant-godot" path="3-interactor/turboquant-godot" remote="v-sekai-fire" revision="feat/turboquant-on-master" />
   <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
+  <project name="datasource-flow" path="3-interactor/datasource-flow" remote="v-sekai-fabric" revision="main-fabric" />
+  <project name="datasource-flow-project" path="3-interactor/datasource-flow-project" remote="v-sekai-fabric" revision="main" />
   <project name="cyclegan-style-transfer" path="3-interactor/cyclegan-style-transfer" remote="weftspun" revision="main" />
   <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
   <project name="interactor-pose-consensus" path="3-interactor/pose-consensus" remote="weftspun" revision="main" />
