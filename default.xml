@@ -9,6 +9,9 @@
   <remote name="ftxui" fetch="https://github.com/ArthurSonzogni" />
   <remote name="huggingface" fetch="https://huggingface.co" />
   <remote name="huggingface-datasets" fetch="https://huggingface.co/datasets" />
+  <remote name="taskweft" fetch="https://github.com/taskweft" />
+  <remote name="v-sekai-fire" fetch="https://github.com/V-Sekai-fire" />
+  <remote name="maifoundations" fetch="https://github.com/maifoundations" />
 
   <default sync-j="16" />
 
@@ -25,6 +28,7 @@
   <project name="billboard-labels" path="1-transport/billboard-labels" remote="weftspun" revision="main" />
   <project name="usd-viewer" path="1-transport/usd-viewer" remote="weftspun" revision="main" />
   <project name="weftspun-usd-viewer" path="1-transport/weftspun-usd-viewer" remote="weftspun" revision="main" />
+  <project name="deskpin" path="1-transport/deskpin" remote="weftspun" revision="main" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
   <project name="anny-keypoint-anchors" path="2-contract/anny-keypoint-anchors" remote="weftspun" revision="main" />
   <project name="manuals" path="2-contract/manuals-vsk" remote="v-sekai" revision="main" />
@@ -41,12 +45,14 @@
   <project name="entities-godot" path="3-interactor/entities-godot-cineform" remote="v-sekai-fabric" revision="cineform-movie-writer" />
   <project name="entities-godot" path="3-interactor/entities-godot-v0.1.0-dev.1" remote="v-sekai-fabric" revision="refs/tags/keypoints/v0.1.0-dev.1" />
   <project name="entities-godot" path="3-interactor/entities-godot-sandbox" remote="v-sekai-fabric" revision="feat/vsk-sandbox-4.7" />
+  <project name="turboquant-godot" path="3-interactor/turboquant-godot" remote="v-sekai-fire" revision="feat/turboquant-on-master" />
   <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
   <project name="cyclegan-style-transfer" path="3-interactor/cyclegan-style-transfer" remote="weftspun" revision="main" />
   <project name="rf-detr-cpp" path="3-interactor/rf-detr-cpp" remote="weftspun" revision="main" />
   <project name="interactor-pose-consensus" path="3-interactor/pose-consensus" remote="weftspun" revision="main" />
   <project name="interactor-omnigen2" path="3-interactor/omnigen2" remote="weftspun" revision="main" />
   <project name="interactor-editscore" path="3-interactor/editscore" remote="weftspun" revision="main" />
+  <project name="interactor-hailo-ugen300" path="3-interactor/hailo-ugen300" remote="weftspun" revision="main" />
   <project name="tropes-removal-model" path="3-interactor/tropes-removal-model" remote="weftspun" revision="main" />
   <project name="solve" path="3-interactor/sinew-solve" remote="sinew-mocap" revision="main" />
   <project name="mount-drift" path="3-interactor/sinew-mount-drift" remote="sinew-mocap" revision="main" />
@@ -61,6 +67,8 @@
   <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="main" />
   <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="main" />
   <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="main" />
+  <project name="taskweft" path="3-interactor/taskweft" remote="taskweft" revision="main" />
+  <project name="QZO" path="3-interactor/qzo-upstream" remote="maifoundations" revision="ac6803ab2ce725af4dd60c746a3ef3e7be0025cb" />
   <project name="interactor-pixal3d-image-to-textured-mesh" path="3-interactor/pixal3d-image-to-textured-mesh" remote="weftspun" revision="main" />
   <project name="interactor-pixal3d-image-mesh-painting" path="3-interactor/pixal3d-image-mesh-painting" remote="weftspun" revision="main" />
   <project name="interactor-qwen35-defiant" path="3-interactor/qwen35-defiant" remote="weftspun" revision="main" />
@@ -125,6 +133,8 @@
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
   <project name="chibifire/anny-render-corpus" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-generated" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/harmless-prompts-en" path="6-datasource/harmless-prompts-en" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/harmful-prompts-advbench" path="6-datasource/harmful-prompts-advbench" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="packaging" path="7-service/sinew-packaging" remote="sinew-mocap" revision="main" />
