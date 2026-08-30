@@ -12,7 +12,6 @@
   <remote name="taskweft" fetch="https://github.com/taskweft" />
   <remote name="v-sekai-fire" fetch="https://github.com/V-Sekai-fire" />
   <remote name="maifoundations" fetch="https://github.com/maifoundations" />
-  <remote name="meshula" fetch="https://github.com/meshula" />
 
   <default sync-j="16" />
 
@@ -73,7 +72,6 @@
   <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="main" />
   <project name="taskweft" path="3-interactor/taskweft" remote="taskweft" revision="main" />
   <project name="QZO" path="3-interactor/qzo-upstream" remote="maifoundations" revision="ac6803ab2ce725af4dd60c746a3ef3e7be0025cb" />
-  <project name="LabRCSF" path="3-interactor/labrcsf-upstream" remote="meshula" revision="dev" />
   <project name="interactor-pixal3d-image-to-textured-mesh" path="3-interactor/pixal3d-image-to-textured-mesh" remote="weftspun" revision="main" />
   <project name="interactor-pixal3d-image-mesh-painting" path="3-interactor/pixal3d-image-mesh-painting" remote="weftspun" revision="main" />
   <project name="interactor-qwen35-defiant" path="3-interactor/qwen35-defiant" remote="weftspun" revision="main" />
