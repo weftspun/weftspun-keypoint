@@ -136,6 +136,8 @@
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
   <project name="chibifire/maskscore-bench" path="6-datasource/maskscore" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/maskscore-reward-train" path="6-datasource/maskscore-reward" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/maskscore-rl-train" path="6-datasource/maskscore-rl" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-train" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-generated-train" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/harmless-prompts-en-train" path="6-datasource/harmless-prompts-en" remote="huggingface-datasets" revision="main" />
