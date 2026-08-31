@@ -135,10 +135,11 @@
   <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
-  <project name="chibifire/anny-render-corpus" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/anny-render-corpus-generated" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/harmless-prompts-en" path="6-datasource/harmless-prompts-en" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/harmful-prompts-advbench" path="6-datasource/harmful-prompts-advbench" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/maskscore-bench" path="6-datasource/maskscore" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/anny-render-corpus-train" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/anny-render-corpus-generated-train" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/harmless-prompts-en-train" path="6-datasource/harmless-prompts-en" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/harmful-prompts-bench" path="6-datasource/harmful-prompts-advbench" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="spot-broker" path="7-service/spot-broker" remote="weftspun" revision="main" />
