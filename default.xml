@@ -68,6 +68,7 @@
   <project name="nx_shuttle" path="3-interactor/nx-shuttle" remote="weftspun" revision="main" />
   <project name="bumblebee" path="3-interactor/bumblebee" remote="weftspun" revision="main" />
   <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="main" />
+  <project name="interactor-llada-diffusion-lm" path="3-interactor/llada-diffusion-lm" remote="weftspun" revision="main" />
   <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="main" />
   <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="main" />
   <project name="taskweft" path="3-interactor/taskweft" remote="taskweft" revision="main" />
