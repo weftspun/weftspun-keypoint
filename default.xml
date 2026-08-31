@@ -87,6 +87,7 @@
   <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="main" />
   <project name="interactor-voxhammer-image-mesh-editing" path="3-interactor/voxhammer-image-mesh-editing" remote="weftspun" revision="main" />
   <project name="VoxHammer" path="3-interactor/voxhammer-upstream" remote="weftspun" revision="f33cd965388faf4bd89252068cac5a0b8030e7de" />
+  <project name="Wan2.1" path="3-interactor/wan-vace-upstream" remote="weftspun" revision="9737cba9c1c3c4d04b33fcad41c111989865d315" />
   <project name="Pixal3D" path="3-interactor/pixal3d-upstream" remote="weftspun" revision="cdbb2bbffbf4e6f298b5f2af3d1d76a8d823d2af" />
   <project name="MoGe" path="3-interactor/moge-upstream" remote="weftspun" revision="74fbce054ebed49800de42d0ad0e83495065719a" />
   <project name="lingbot-map" path="3-interactor/lingbot-map-upstream" remote="weftspun" revision="1740f18ead3cca8e0e07dd0ec6b7030d22f0894c" />
@@ -136,6 +137,8 @@
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
   <project name="chibifire/maskscore-bench" path="6-datasource/maskscore" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/maskscore-reward-train" path="6-datasource/maskscore-reward" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/maskscore-rl-train" path="6-datasource/maskscore-rl" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-train" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-generated-train" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/harmless-prompts-en-train" path="6-datasource/harmless-prompts-en" remote="huggingface-datasets" revision="main" />
