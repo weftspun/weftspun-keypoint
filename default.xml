@@ -18,6 +18,7 @@
   <project name="weftspun-studio" path="1-transport/weftspun-studio" remote="weftspun" revision="main" />
   <project name="easy-diffusion-mcp" path="1-transport/easy-diffusion-mcp" remote="weftspun" revision="main" />
   <project name="rf-detr-mcp" path="1-transport/rf-detr-mcp" remote="weftspun" revision="main" />
+  <project name="artifacts-mmo-mcp" path="1-transport/artifacts-mmo-mcp" remote="weftspun" revision="main" />
   <project name="runpod-chat-tui" path="1-transport/runpod-chat-tui" remote="weftspun" revision="main" />
   <project name="transport-cineform-tui" path="1-transport/transport-cineform-tui" remote="weftspun" revision="main" />
   <project name="ex_mcp" path="1-transport/ex-mcp" remote="weftspun" revision="main" />
@@ -143,6 +144,8 @@
   <project name="chibifire/anny-render-corpus-generated-train" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/harmless-prompts-en-train" path="6-datasource/harmless-prompts-en" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/harmful-prompts-bench" path="6-datasource/harmful-prompts-advbench" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/artifacts-mmo-planner-traces-train" path="6-datasource/artifacts-mmo-planner-traces" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/artifacts-mmo-api-traces-train" path="6-datasource/artifacts-mmo-api-traces" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="spot-broker" path="7-service/spot-broker" remote="weftspun" revision="main" />
