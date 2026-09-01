@@ -12,10 +12,12 @@
   <remote name="taskweft" fetch="https://github.com/taskweft" />
   <remote name="v-sekai-fire" fetch="https://github.com/V-Sekai-fire" />
   <remote name="maifoundations" fetch="https://github.com/maifoundations" />
+  <remote name="chibifire" fetch="https://github.com/chibifire" />
 
   <default sync-j="16" />
 
   <project name="weftspun-studio" path="1-transport/weftspun-studio" remote="weftspun" revision="main" />
+  <project name="chibifire.com" path="1-transport/chibifire-com" remote="chibifire" revision="main" />
   <project name="easy-diffusion-mcp" path="1-transport/easy-diffusion-mcp" remote="weftspun" revision="main" />
   <project name="rf-detr-mcp" path="1-transport/rf-detr-mcp" remote="weftspun" revision="main" />
   <project name="runpod-chat-tui" path="1-transport/runpod-chat-tui" remote="weftspun" revision="main" />
