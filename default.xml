@@ -151,11 +151,8 @@
   <project name="chibifire/harmful-prompts-bench" path="6-datasource/harmful-prompts-advbench" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/artifacts-mmo-planner-traces-train" path="6-datasource/artifacts-mmo-planner-traces" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/artifacts-mmo-api-traces-train" path="6-datasource/artifacts-mmo-api-traces" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/vast-market-snapshots" path="6-datasource/vast-market-snapshots-data" remote="huggingface-datasets" revision="main" />
-  <project name="vast-market-snapshots" path="6-datasource/vast-market-snapshots" remote="weftspun" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
-  <project name="spot-broker" path="7-service/spot-broker" remote="weftspun" revision="main" />
   <project name="packaging" path="7-service/sinew-packaging" remote="sinew-mocap" revision="main" />
   <project name="homebrew-sinew" path="7-service/sinew-homebrew" remote="sinew-mocap" revision="main" />
   <project name="scoop-bucket" path="7-service/sinew-scoop-bucket" remote="sinew-mocap" revision="main" />
