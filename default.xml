@@ -74,6 +74,7 @@
   <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="main" />
   <project name="taskweft" path="3-interactor/taskweft" remote="taskweft" revision="main" />
   <project name="taskweft-grafcet-static" path="3-interactor/taskweft-grafcet-static" remote="weftspun" revision="main" />
+  <project name="taskweft-fbd-compiler" path="3-interactor/taskweft-fbd-compiler" remote="weftspun" revision="main" />
   <project name="taskweft-nmm-personas" path="3-interactor/taskweft-nmm-personas" remote="weftspun" revision="main" />
   <project name="taskweft-godot-sandbox" path="3-interactor/taskweft-godot-sandbox" remote="weftspun" revision="main" />
   <project name="QZO" path="3-interactor/qzo-upstream" remote="maifoundations" revision="ac6803ab2ce725af4dd60c746a3ef3e7be0025cb" />
@@ -100,6 +101,7 @@
   <project name="litert-torch" path="3-interactor/litert-torch-upstream" remote="weftspun" revision="95ccef1b0f20d77495783a2695ca2b3bc64b4ac5" />
   <project name="llama-cpp-npu-vision" path="3-interactor/llama-cpp-npu-vision-upstream" remote="weftspun" revision="6a2729032a2b8c978c3b98553e7191478609507a" />
   <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="main" />
+  <project name="editscore-lora-qwen3vl-4b" path="3-interactor/editscore-lora-qwen3vl-4b" remote="weftspun" revision="main" />
   <project name="godot-soma-twist" path="4-entities/godot-soma-twist" remote="weftspun" revision="main" />
   <project name="anny-pose-retarget-work" path="4-entities/anny-pose-retarget-work" remote="weftspun" revision="main" />
   <project name="gnm-anny-headfit" path="4-entities/gnm-anny-headfit" remote="weftspun" revision="main" />
@@ -149,6 +151,8 @@
   <project name="chibifire/harmful-prompts-bench" path="6-datasource/harmful-prompts-advbench" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/artifacts-mmo-planner-traces-train" path="6-datasource/artifacts-mmo-planner-traces" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/artifacts-mmo-api-traces-train" path="6-datasource/artifacts-mmo-api-traces" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/vast-market-snapshots" path="6-datasource/vast-market-snapshots-data" remote="huggingface-datasets" revision="main" />
+  <project name="vast-market-snapshots" path="6-datasource/vast-market-snapshots" remote="weftspun" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="spot-broker" path="7-service/spot-broker" remote="weftspun" revision="main" />
