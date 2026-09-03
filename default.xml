@@ -88,12 +88,6 @@
   <project name="interactor-trellis2-image-mesh-painting" path="3-interactor/trellis2-image-mesh-painting" remote="weftspun" revision="main" />
   <project name="interactor-trellis2-image-to-textured-mesh" path="3-interactor/trellis2-image-to-textured-mesh" remote="weftspun" revision="main" />
   <project name="trellis2cpp" path="3-interactor/trellis2cpp" remote="weftspun" revision="main" />
-  <!-- RFD 2188: one canonical ggml under 2-contract/ggml. The two prior
-       entries (paths 3-interactor/trellis2cpp/ggml and 3-interactor/ggml-seethrough)
-       pinned the same project at different SHAs on different feature branches:
-       drift alive at read-time. weftspun-consolidated is seeded from the richer
-       tip (3404c951, ggml-seethrough) and moves forward without a manifest edit.
-       Consumers migrate to reference this path in Phase 2 PRs. -->
   <project name="ggml" path="2-contract/ggml" remote="weftspun" revision="weftspun-consolidated" />
   <project name="ufbx-to-openusd" path="3-interactor/ufbx-to-openusd" remote="weftspun" revision="main" />
   <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="main" />
