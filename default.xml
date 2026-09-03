@@ -156,6 +156,7 @@
   <project name="chibifire/artifacts-mmo-api-traces-train" path="6-datasource/artifacts-mmo-api-traces" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/zenodo-ecommerce-text" path="6-datasource/zenodo-ecommerce-text" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/kaggle-womens-ecom-clothing-reviews" path="6-datasource/kaggle-womens-ecom-clothing-reviews" remote="huggingface-datasets" revision="main" />
+  <project name="chibifire/zenodo-second-hand-fashion-v3" path="6-datasource/zenodo-second-hand-fashion" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="packaging" path="7-service/sinew-packaging" remote="sinew-mocap" revision="main" />
