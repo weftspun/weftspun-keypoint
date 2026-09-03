@@ -88,8 +88,7 @@
   <project name="interactor-trellis2-image-mesh-painting" path="3-interactor/trellis2-image-mesh-painting" remote="weftspun" revision="main" />
   <project name="interactor-trellis2-image-to-textured-mesh" path="3-interactor/trellis2-image-to-textured-mesh" remote="weftspun" revision="main" />
   <project name="trellis2cpp" path="3-interactor/trellis2cpp" remote="weftspun" revision="main" />
-  <project name="ggml" path="3-interactor/trellis2cpp/ggml" remote="weftspun" revision="331b9cba52b23d895bc4ad218c007eb5e667540f" />
-  <project name="ggml" path="3-interactor/ggml-seethrough" remote="weftspun" revision="3404c951721e8a8afa73770543dfea7b9870ccf5" />
+  <project name="ggml" path="2-contract/ggml" remote="weftspun" revision="weftspun-consolidated" />
   <project name="ufbx-to-openusd" path="3-interactor/ufbx-to-openusd" remote="weftspun" revision="main" />
   <project name="unified-modal-embedder" path="3-interactor/unified-modal-embedder" remote="weftspun" revision="main" />
   <project name="interactor-voxhammer-image-mesh-editing" path="3-interactor/voxhammer-image-mesh-editing" remote="weftspun" revision="main" />
