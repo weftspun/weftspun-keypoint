@@ -12,7 +12,6 @@
   <remote name="taskweft" fetch="https://github.com/taskweft" />
   <remote name="v-sekai-fire" fetch="https://github.com/V-Sekai-fire" />
   <remote name="maifoundations" fetch="https://github.com/maifoundations" />
-  <remote name="localai-org" fetch="https://github.com/localai-org" />
 
   <default sync-j="16" />
 
@@ -39,8 +38,8 @@
   <project name="QCBOR" path="2-contract/bus/libs/qcbor" remote="laurencelundblade" revision="refs/tags/v1.6.1" />
   <project name="interactor-kimodo-text-to-motion" path="3-interactor/kimodo-text-to-motion" remote="weftspun" revision="main" />
   <project name="interactor-skintokens-auto-rig" path="3-interactor/skintokens-auto-rig" remote="weftspun" revision="main" />
-  <project name="skin-tokens.cpp" path="3-interactor/skin-tokens-cpp" remote="localai-org" revision="main" />
-  <project name="motion-bricks.cpp" path="3-interactor/motion-bricks-cpp" remote="localai-org" revision="main" />
+  <project name="skin-tokens.cpp" path="3-interactor/skin-tokens-cpp" remote="weftspun" revision="main" />
+  <project name="motion-bricks.cpp" path="3-interactor/motion-bricks-cpp" remote="weftspun" revision="main" />
   <project name="interactor-seethrough-layerdiff" path="3-interactor/seethrough-layerdiff" remote="weftspun" revision="main" />
   <project name="interactor-seethrough-marigold-depth" path="3-interactor/seethrough-marigold-depth" remote="weftspun" revision="main" />
   <project name="interactor-seethrough-vae" path="3-interactor/seethrough-vae" remote="weftspun" revision="main" />
