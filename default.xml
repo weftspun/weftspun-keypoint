@@ -21,6 +21,7 @@
   <project name="artifacts-mmo-mcp" path="1-transport/artifacts-mmo-mcp" remote="weftspun" revision="main" />
   <project name="runpod-chat-tui" path="1-transport/runpod-chat-tui" remote="weftspun" revision="main" />
   <project name="transport-cineform-tui" path="1-transport/transport-cineform-tui" remote="weftspun" revision="main" />
+  <project name="transport-shepherd" path="1-transport/transport-shepherd" remote="weftspun" revision="main" />
   <project name="ex_mcp" path="1-transport/ex-mcp" remote="weftspun" revision="main" />
   <project name="driver" path="1-transport/sinew-driver" remote="sinew-mocap" revision="main" />
   <project name="vr-bridge" path="1-transport/sinew-vr-bridge" remote="sinew-mocap" revision="main" />
