@@ -16,14 +16,11 @@
   <default sync-j="16" />
 
   <project name="weftspun-studio" path="1-transport/weftspun-studio" remote="weftspun" revision="main" />
-  <project name="artifacts-mmo-mcp" path="1-transport/artifacts-mmo-mcp" remote="weftspun" revision="main" />
   <project name="transport-cineform-tui" path="1-transport/transport-cineform-tui" remote="weftspun" revision="main" />
   <project name="transport-shepherd" path="1-transport/transport-shepherd" remote="weftspun" revision="main" />
   <project name="ex_mcp" path="1-transport/ex-mcp" remote="weftspun" revision="main" />
-  <project name="billboard-labels" path="1-transport/billboard-labels" remote="weftspun" revision="main" />
   <project name="usd-viewer" path="1-transport/usd-viewer" remote="weftspun" revision="main" />
   <project name="weftspun-usd-viewer" path="1-transport/weftspun-usd-viewer" remote="weftspun" revision="main" />
-  <project name="deskpin" path="1-transport/deskpin" remote="weftspun" revision="main" />
   <project name="hm08-partition" path="2-contract/hm08-partition" remote="weftspun" revision="main" />
   <project name="anny-keypoint-anchors" path="2-contract/anny-keypoint-anchors" remote="weftspun" revision="main" />
   <project name="manuals" path="2-contract/manuals-vsk" remote="v-sekai" revision="main" />
