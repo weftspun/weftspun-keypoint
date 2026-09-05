@@ -124,13 +124,19 @@
   <project name="thebasemesh-stage" path="6-datasource/thebasemesh-stage" remote="weftspun" revision="main" />
   <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
-  <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
+  <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main">
+    <linkfile src="fdb_vfs.c"
+              dest="7-service/service-bao-sqlite-fdb/vendor/store/fdb_vfs.c" />
+    <linkfile src="fdb_keys.h"
+              dest="7-service/service-bao-sqlite-fdb/vendor/store/fdb_keys.h" />
+  </project>
   <project name="chibifire/anny-render-corpus-train" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-generated-train" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="service-livebook" path="7-service/service-livebook" remote="weftspun" revision="main" />
   <project name="service-godot-build" path="7-service/service-godot-build" remote="weftspun" revision="main" />
+  <project name="service-bao-sqlite-fdb" path="7-service/service-bao-sqlite-fdb" remote="weftspun" revision="main" />
 
   <project name="iceoryx2" path="7-service/service-cineform/thirdparty/iceoryx2"
            remote="weftspun" revision="a1909f56e30c16b1492e829313389b9439811323" />
