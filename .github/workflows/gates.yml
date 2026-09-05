@@ -89,10 +89,13 @@ jobs:
       - name: negative controls (shepherd)
         working-directory: transport-shepherd
         run: mix gates manifest-root --self-test
-      # The gate takes the manifest path as an argument; running from the manifest
-      # checkout keeps default.xml resolvable, and mix -C points BEAM at shepherd.
+      # The gate takes the manifest path as an argument. `mix -C` is not a mix
+      # flag (surfaced in the merged run of PR#89: "Mix only recognizes --help
+      # and --version"); running from shepherd's own directory with an absolute
+      # manifest path is the working shape.
       - name: manifest parses and declares no copyfile (shepherd)
-        run: mix -C transport-shepherd gates manifest-root --manifest ${{ github.workspace }}/default.xml --manifest-only
+        working-directory: transport-shepherd
+        run: mix gates manifest-root --manifest ${{ github.workspace }}/default.xml --manifest-only
 
   manifest-comments:
     runs-on: ubuntu-latest
