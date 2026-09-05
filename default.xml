@@ -126,9 +126,9 @@
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main">
     <linkfile src="fdb_vfs.c"
-              dest="7-service/service-bao-sqlite-fdb/vendor/store/fdb_vfs.c" />
+              dest="7-service/service-bao-sqlite-fdb/thirdparty/store/fdb_vfs.c" />
     <linkfile src="fdb_keys.h"
-              dest="7-service/service-bao-sqlite-fdb/vendor/store/fdb_keys.h" />
+              dest="7-service/service-bao-sqlite-fdb/thirdparty/store/fdb_keys.h" />
   </project>
   <project name="chibifire/anny-render-corpus-train" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-generated-train" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
