@@ -16,10 +16,8 @@
   <default sync-j="16" />
 
   <project name="weftspun-studio" path="1-transport/weftspun-studio" remote="weftspun" revision="main" />
-  <project name="easy-diffusion-mcp" path="1-transport/easy-diffusion-mcp" remote="weftspun" revision="main" />
   <project name="rf-detr-mcp" path="1-transport/rf-detr-mcp" remote="weftspun" revision="main" />
   <project name="artifacts-mmo-mcp" path="1-transport/artifacts-mmo-mcp" remote="weftspun" revision="main" />
-  <project name="runpod-chat-tui" path="1-transport/runpod-chat-tui" remote="weftspun" revision="main" />
   <project name="transport-cineform-tui" path="1-transport/transport-cineform-tui" remote="weftspun" revision="main" />
   <project name="transport-shepherd" path="1-transport/transport-shepherd" remote="weftspun" revision="main" />
   <project name="ex_mcp" path="1-transport/ex-mcp" remote="weftspun" revision="main" />
@@ -128,13 +126,11 @@
   <project name="anny-render-corpus" path="6-datasource/anny-render-corpus" remote="weftspun" revision="main" />
   <project name="anny-soma-corpus" path="6-datasource/anny-soma-corpus" remote="weftspun" revision="main" />
   <project name="versitygw-local" path="6-datasource/versitygw-local" remote="weftspun" revision="main" />
-  <project name="rf-detr-detection-data" path="6-datasource/rf-detr-detection-data" remote="weftspun" revision="main" />
   <project name="rf-detr-keypoint-data" path="6-datasource/rf-detr-keypoint-data" remote="weftspun" revision="main" />
   <project name="rf-detr-segmentation-data" path="6-datasource/rf-detr-segmentation-data" remote="weftspun" revision="main" />
   <project name="kenney-stage" path="6-datasource/kenney-stage" remote="weftspun" revision="main" />
   <project name="quaternius-stage" path="6-datasource/quaternius-stage" remote="weftspun" revision="main" />
   <project name="thebasemesh-stage" path="6-datasource/thebasemesh-stage" remote="weftspun" revision="main" />
-  <project name="easy-diffusion-traces" path="6-datasource/easy-diffusion-traces" remote="weftspun" revision="main" />
   <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
