@@ -129,6 +129,7 @@
   <project name="CCTV" path="6-datasource/cctv" remote="c2sp" revision="main" />
   <project name="desync" path="6-datasource/desync" remote="folbricht" revision="master" />
   <project name="casync" path="6-datasource/casync" remote="systemd" revision="main" />
+  <project name="SK_VRM1_Constraint_Twist_Sample" path="6-datasource/sk-vrm1-constraint-twist-sample" remote="v-sekai-fire" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main">
     <linkfile src="fdb_vfs.c"
