@@ -62,6 +62,38 @@ jobs:
         # its own, and the workflow calls it instead of reimplementing it.
         run: python check_manifest_root.py --manifest-only --manifest default.xml
 
+  # DUAL-TRACK PARITY WITH shepherd's Shepherd.Gates.ManifestRoot PORT.
+  #
+  # Task #83 landed 17 bucket-A gate ports in weftspun/transport-shepherd; the
+  # operator picked "dual-track for one week" so both implementations of each
+  # gate run in CI alongside their python original during the window and any
+  # drift becomes visible. The shepherd port carries the same self-test set
+  # (seven ways a root can go wrong, all planted, all rejected).
+  manifest-root-shepherd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: check out transport-shepherd
+        uses: actions/checkout@v4
+        with:
+          repository: weftspun/transport-shepherd
+          path: transport-shepherd
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: '27'
+          elixir-version: '1.18'
+      - name: install shepherd deps
+        working-directory: transport-shepherd
+        run: mix deps.get
+      # Same order as the python job above -- controls first, live check after.
+      - name: negative controls (shepherd)
+        working-directory: transport-shepherd
+        run: mix gates manifest-root --self-test
+      # The gate takes the manifest path as an argument; running from the manifest
+      # checkout keeps default.xml resolvable, and mix -C points BEAM at shepherd.
+      - name: manifest parses and declares no copyfile (shepherd)
+        run: mix -C transport-shepherd gates manifest-root --manifest ${{ github.workspace }}/default.xml --manifest-only
+
   manifest-comments:
     runs-on: ubuntu-latest
     steps:
