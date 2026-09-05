@@ -12,6 +12,7 @@
   <remote name="taskweft" fetch="https://github.com/taskweft" />
   <remote name="v-sekai-fire" fetch="https://github.com/V-Sekai-fire" />
   <remote name="maifoundations" fetch="https://github.com/maifoundations" />
+  <remote name="c2sp" fetch="https://github.com/C2SP" />
 
   <default sync-j="16" />
 
@@ -123,6 +124,7 @@
   <project name="quaternius-stage" path="6-datasource/quaternius-stage" remote="weftspun" revision="main" />
   <project name="thebasemesh-stage" path="6-datasource/thebasemesh-stage" remote="weftspun" revision="main" />
   <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
+  <project name="CCTV" path="6-datasource/cctv" remote="c2sp" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main">
     <linkfile src="fdb_vfs.c"
