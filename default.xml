@@ -41,13 +41,7 @@
   <project name="interactor-skintokens-auto-rig" path="3-interactor/skintokens-auto-rig" remote="weftspun" revision="main" />
   <project name="skin-tokens.cpp" path="3-interactor/skin-tokens-cpp" remote="weftspun" revision="main" />
   <project name="motion-bricks.cpp" path="3-interactor/motion-bricks-cpp" remote="weftspun" revision="main" />
-  <project name="interactor-seethrough-layerdiff" path="3-interactor/seethrough-layerdiff" remote="weftspun" revision="main" />
-  <project name="interactor-seethrough-marigold-depth" path="3-interactor/seethrough-marigold-depth" remote="weftspun" revision="main" />
-  <project name="interactor-seethrough-vae" path="3-interactor/seethrough-vae" remote="weftspun" revision="main" />
-  <project name="interactor-seethrough-partseg" path="3-interactor/seethrough-partseg" remote="weftspun" revision="main" />
   <project name="entities-godot" path="3-interactor/entities-godot-main" remote="v-sekai-fabric" revision="main" />
-  <project name="entities-godot" path="3-interactor/entities-godot-cineform" remote="v-sekai-fabric" revision="cineform-movie-writer" />
-  <project name="entities-godot" path="3-interactor/entities-godot-v0.1.0-dev.1" remote="v-sekai-fabric" revision="refs/tags/keypoints/v0.1.0-dev.1" />
   <project name="entities-godot" path="3-interactor/entities-godot-sandbox" remote="v-sekai-fabric" revision="feat/vsk-sandbox-4.7" />
   <project name="turboquant-godot" path="3-interactor/turboquant-godot" remote="v-sekai-fire" revision="feat/turboquant-on-master" />
   <project name="interactor-cineform" path="3-interactor/interactor-cineform" remote="weftspun" revision="main" />
@@ -65,14 +59,12 @@
   <project name="mount-drift" path="3-interactor/sinew-mount-drift" remote="sinew-mocap" revision="main" />
   <project name="interactor-physics" path="3-interactor/physics" remote="v-sekai-fabric" revision="main" />
   <project name="interactor-motion" path="3-interactor/motion" remote="v-sekai-fabric" revision="main" />
-  <project name="mujoco-riscv64" path="3-interactor/mujoco-riscv64" remote="v-sekai-fabric" revision="main" />
   <project name="interactor-mujoco-mjx" path="3-interactor/mujoco-mjx" remote="weftspun" revision="main" />
   <project name="interactor-anny" path="3-interactor/anny" remote="weftspun" revision="main" />
   <project name="interactor-soma-x" path="3-interactor/soma-x" remote="weftspun" revision="main" />
   <project name="nx_shuttle" path="3-interactor/nx-shuttle" remote="weftspun" revision="main" />
   <project name="bumblebee" path="3-interactor/bumblebee" remote="weftspun" revision="main" />
   <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="main" />
-  <project name="interactor-llada-diffusion-lm" path="3-interactor/llada-diffusion-lm" remote="weftspun" revision="main" />
   <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="main" />
   <project name="nx-ggml" path="3-interactor/nx-ggml" remote="weftspun" revision="main" />
   <project name="taskweft" path="3-interactor/taskweft" remote="taskweft" revision="main" />
