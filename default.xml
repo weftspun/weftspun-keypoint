@@ -62,7 +62,6 @@
   <project name="interactor-mujoco-mjx" path="3-interactor/mujoco-mjx" remote="weftspun" revision="main" />
   <project name="interactor-anny" path="3-interactor/anny" remote="weftspun" revision="main" />
   <project name="interactor-soma-x" path="3-interactor/soma-x" remote="weftspun" revision="main" />
-  <project name="nx_shuttle" path="3-interactor/nx-shuttle" remote="weftspun" revision="main" />
   <project name="bumblebee" path="3-interactor/bumblebee" remote="weftspun" revision="main" />
   <project name="interactor-gemma4-composer" path="3-interactor/gemma4-composer" remote="weftspun" revision="main" />
   <project name="multimodal-semantic-ids" path="3-interactor/multimodal-semantic-ids" remote="weftspun" revision="main" />
@@ -72,7 +71,6 @@
   <project name="taskweft-fbd-compiler" path="3-interactor/taskweft-fbd-compiler" remote="weftspun" revision="main" />
   <project name="taskweft-nmm-personas" path="3-interactor/taskweft-nmm-personas" remote="weftspun" revision="main" />
   <project name="taskweft-godot-sandbox" path="3-interactor/taskweft-godot-sandbox" remote="weftspun" revision="main" />
-  <project name="QZO" path="3-interactor/qzo-upstream" remote="maifoundations" revision="ac6803ab2ce725af4dd60c746a3ef3e7be0025cb" />
   <project name="interactor-pixal3d-image-to-textured-mesh" path="3-interactor/pixal3d-image-to-textured-mesh" remote="weftspun" revision="main" />
   <project name="interactor-pixal3d-image-mesh-painting" path="3-interactor/pixal3d-image-mesh-painting" remote="weftspun" revision="main" />
   <project name="interactor-qwen35-defiant" path="3-interactor/qwen35-defiant" remote="weftspun" revision="main" />
@@ -93,8 +91,6 @@
   <project name="MoGe" path="3-interactor/moge-upstream" remote="weftspun" revision="74fbce054ebed49800de42d0ad0e83495065719a" />
   <project name="lingbot-map" path="3-interactor/lingbot-map-upstream" remote="weftspun" revision="1740f18ead3cca8e0e07dd0ec6b7030d22f0894c" />
   <project name="TRELLIS.2" path="3-interactor/trellis2-upstream" remote="weftspun" revision="75fbf0183001ed9876c8dbb35de6b68552ee08bd" />
-  <project name="LiteRT" path="3-interactor/litert-upstream" remote="weftspun" revision="bad370ead7a58f7f7f35ebf291b2b02ba24409f0" />
-  <project name="litert-torch" path="3-interactor/litert-torch-upstream" remote="weftspun" revision="95ccef1b0f20d77495783a2695ca2b3bc64b4ac5" />
   <project name="llama-cpp-npu-vision" path="3-interactor/llama-cpp-npu-vision-upstream" remote="weftspun" revision="d75e441df25d7b783fda089755de8101ed1b9426" />
   <project name="interactor-voxhammer-text-mesh-editing" path="3-interactor/voxhammer-text-mesh-editing" remote="weftspun" revision="main" />
   <project name="editscore-lora-qwen3vl-4b" path="3-interactor/editscore-lora-qwen3vl-4b" remote="weftspun" revision="main" />
@@ -144,11 +140,6 @@
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main" />
   <project name="chibifire/anny-render-corpus-train" path="6-datasource/anny-render-corpus-constructed" remote="huggingface-datasets" revision="main" />
   <project name="chibifire/anny-render-corpus-generated-train" path="6-datasource/anny-render-corpus-generated" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/harmless-prompts-en-train" path="6-datasource/harmless-prompts-en" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/harmful-prompts-bench" path="6-datasource/harmful-prompts-advbench" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/zenodo-ecommerce-text" path="6-datasource/zenodo-ecommerce-text" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/kaggle-womens-ecom-clothing-reviews" path="6-datasource/kaggle-womens-ecom-clothing-reviews" remote="huggingface-datasets" revision="main" />
-  <project name="chibifire/zenodo-second-hand-fashion-v3" path="6-datasource/zenodo-second-hand-fashion" remote="huggingface-datasets" revision="main" />
   <project name="weft-warp-burrito" path="7-service/weft-warp-burrito" remote="weftspun" revision="main" />
   <project name="service-cineform" path="7-service/service-cineform" remote="weftspun" revision="main" />
   <project name="packaging" path="7-service/sinew-packaging" remote="sinew-mocap" revision="main" />
