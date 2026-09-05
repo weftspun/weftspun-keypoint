@@ -13,6 +13,8 @@
   <remote name="v-sekai-fire" fetch="https://github.com/V-Sekai-fire" />
   <remote name="maifoundations" fetch="https://github.com/maifoundations" />
   <remote name="c2sp" fetch="https://github.com/C2SP" />
+  <remote name="folbricht" fetch="https://github.com/folbricht" />
+  <remote name="systemd" fetch="https://github.com/systemd" />
 
   <default sync-j="16" />
 
@@ -125,6 +127,8 @@
   <project name="thebasemesh-stage" path="6-datasource/thebasemesh-stage" remote="weftspun" revision="main" />
   <project name="coco-ood-eval" path="6-datasource/coco-ood-eval" remote="weftspun" revision="main" />
   <project name="CCTV" path="6-datasource/cctv" remote="c2sp" revision="main" />
+  <project name="desync" path="6-datasource/desync" remote="folbricht" revision="master" />
+  <project name="casync" path="6-datasource/casync" remote="systemd" revision="main" />
   <project name="datasource-foundationdb" path="6-datasource/foundationdb" remote="weftspun" revision="main" />
   <project name="datasource-store" path="6-datasource/store" remote="weftspun" revision="main">
     <linkfile src="fdb_vfs.c"
